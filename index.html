@@ -1,0 +1,1643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A daily world poll guessing game. Guess what percent of players said yes, in three tries.">
+<title>Guess the Crowd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap">
+<style>/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: var(--font-figtree), "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    --color-black: #000;
+    --spacing: 0.25rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --tracking-tight: -0.025em;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-relaxed: 1.625;
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-figtree), "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .relative {
+    position: relative;
+  }
+  .inset-x-0 {
+    inset-inline: 0px;
+  }
+  .inset-y-0 {
+    inset-block: 0px;
+  }
+  .-top-1 {
+    top: calc(var(--spacing) * -1);
+  }
+  .-top-4 {
+    top: calc(var(--spacing) * -4);
+  }
+  .top-0 {
+    top: 0px;
+  }
+  .top-1 {
+    top: var(--spacing);
+  }
+  .top-\[72px\] {
+    top: 72px;
+  }
+  .top-full {
+    top: 100%;
+  }
+  .right-0 {
+    right: 0px;
+  }
+  .bottom-0 {
+    bottom: 0px;
+  }
+  .-left-\[9999px\] {
+    left: calc(9999px * -1);
+  }
+  .left-0 {
+    left: 0px;
+  }
+  .left-1 {
+    left: var(--spacing);
+  }
+  .left-1\/2 {
+    left: calc(1 / 2 * 100%);
+  }
+  .z-40 {
+    z-index: 40;
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-0\.5 {
+    margin-top: calc(var(--spacing) * 0.5);
+  }
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-1\.5 {
+    margin-top: calc(var(--spacing) * 1.5);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
+  .-mr-2 {
+    margin-right: calc(var(--spacing) * -2);
+  }
+  .-mb-px {
+    margin-bottom: -1px;
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .-ml-1 {
+    margin-left: calc(var(--spacing) * -1);
+  }
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline {
+    display: inline;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .table {
+    display: table;
+  }
+  .size-4 {
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 4);
+  }
+  .size-5 {
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+  }
+  .size-7 {
+    width: calc(var(--spacing) * 7);
+    height: calc(var(--spacing) * 7);
+  }
+  .size-10 {
+    width: calc(var(--spacing) * 10);
+    height: calc(var(--spacing) * 10);
+  }
+  .size-12 {
+    width: calc(var(--spacing) * 12);
+    height: calc(var(--spacing) * 12);
+  }
+  .h-2\.5 {
+    height: calc(var(--spacing) * 2.5);
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
+  .h-7 {
+    height: calc(var(--spacing) * 7);
+  }
+  .h-8 {
+    height: calc(var(--spacing) * 8);
+  }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
+  .h-11 {
+    height: calc(var(--spacing) * 11);
+  }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
+  .h-14 {
+    height: calc(var(--spacing) * 14);
+  }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
+  .h-\[60px\] {
+    height: 60px;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .h-px {
+    height: 1px;
+  }
+  .min-h-20 {
+    min-height: calc(var(--spacing) * 20);
+  }
+  .min-h-dvh {
+    min-height: 100dvh;
+  }
+  .w-0\.5 {
+    width: calc(var(--spacing) * 0.5);
+  }
+  .w-3\/4 {
+    width: calc(3 / 4 * 100%);
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .w-12 {
+    width: calc(var(--spacing) * 12);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
+  }
+  .w-\[84px\] {
+    width: 84px;
+  }
+  .w-\[calc\(100\%-32px\)\] {
+    width: calc(100% - 32px);
+  }
+  .w-full {
+    width: 100%;
+  }
+  .w-px {
+    width: 1px;
+  }
+  .max-w-\[380px\] {
+    max-width: 380px;
+  }
+  .max-w-\[448px\] {
+    max-width: 448px;
+  }
+  .max-w-\[480px\] {
+    max-width: 480px;
+  }
+  .max-w-\[560px\] {
+    max-width: 560px;
+  }
+  .max-w-\[600px\] {
+    max-width: 600px;
+  }
+  .max-w-\[1000px\] {
+    max-width: 1000px;
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .min-w-7 {
+    min-width: calc(var(--spacing) * 7);
+  }
+  .min-w-44 {
+    min-width: calc(var(--spacing) * 44);
+  }
+  .min-w-\[72px\] {
+    min-width: 72px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+  .-translate-x-1\/2 {
+    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-x-5 {
+    --tw-translate-x: calc(var(--spacing) * 5);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .animate-pulse {
+    animation: var(--animate-pulse);
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .resize-none {
+    resize: none;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid-cols-7 {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-col-reverse {
+    flex-direction: column-reverse;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .place-items-center {
+    place-items: center;
+  }
+  .items-baseline {
+    align-items: baseline;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .gap-0\.5 {
+    gap: calc(var(--spacing) * 0.5);
+  }
+  .gap-1 {
+    gap: var(--spacing);
+  }
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-2\.5 {
+    gap: calc(var(--spacing) * 2.5);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .gap-\[3px\] {
+    gap: 3px;
+  }
+  .gap-px {
+    gap: 1px;
+  }
+  :where(.space-y-1\.5 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-2\.5 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-3 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-4 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-5 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .gap-x-3 {
+    column-gap: calc(var(--spacing) * 3);
+  }
+  .gap-x-5 {
+    column-gap: calc(var(--spacing) * 5);
+  }
+  .gap-y-1 {
+    row-gap: var(--spacing);
+  }
+  .gap-y-2 {
+    row-gap: calc(var(--spacing) * 2);
+  }
+  .gap-y-4 {
+    row-gap: calc(var(--spacing) * 4);
+  }
+  :where(.divide-y > :not(:last-child)) {
+    --tw-divide-y-reverse: 0;
+    border-bottom-style: var(--tw-border-style);
+    border-top-style: var(--tw-border-style);
+    border-top-width: calc(1px * var(--tw-divide-y-reverse));
+    border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  }
+  :where(.divide-line > :not(:last-child)) {
+    border-color: var(--border);
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .rounded-t-\[3px\] {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  .rounded-t-sm {
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-y {
+    border-block-style: var(--tw-border-style);
+    border-block-width: 1px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-b-\[3px\] {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 3px;
+  }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-dashed {
+    --tw-border-style: dashed;
+    border-style: dashed;
+  }
+  .border-fg {
+    border-color: var(--fg);
+  }
+  .border-line {
+    border-color: var(--border);
+  }
+  .border-transparent {
+    border-color: transparent;
+  }
+  .bg-bg {
+    background-color: var(--bg);
+  }
+  .bg-btn {
+    background-color: var(--btn);
+  }
+  .bg-close {
+    background-color: var(--close);
+  }
+  .bg-correct {
+    background-color: var(--correct);
+  }
+  .bg-correct-ink {
+    background-color: var(--correct-ink);
+  }
+  .bg-fg {
+    background-color: var(--fg);
+  }
+  .bg-miss {
+    background-color: var(--miss);
+  }
+  .bg-surface {
+    background-color: var(--surface);
+  }
+  .bg-track {
+    background-color: var(--track);
+  }
+  .bg-transparent {
+    background-color: transparent;
+  }
+  .p-1\.5 {
+    padding: calc(var(--spacing) * 1.5);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .px-1 {
+    padding-inline: var(--spacing);
+  }
+  .px-1\.5 {
+    padding-inline: calc(var(--spacing) * 1.5);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .px-7 {
+    padding-inline: calc(var(--spacing) * 7);
+  }
+  .py-0\.5 {
+    padding-block: calc(var(--spacing) * 0.5);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-3\.5 {
+    padding-block: calc(var(--spacing) * 3.5);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
+  }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
+  }
+  .pt-0\.5 {
+    padding-top: calc(var(--spacing) * 0.5);
+  }
+  .pt-1 {
+    padding-top: var(--spacing);
+  }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
+  }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
+  }
+  .pr-3 {
+    padding-right: calc(var(--spacing) * 3);
+  }
+  .pb-6 {
+    padding-bottom: calc(var(--spacing) * 6);
+  }
+  .pb-8 {
+    padding-bottom: calc(var(--spacing) * 8);
+  }
+  .pl-2 {
+    padding-left: calc(var(--spacing) * 2);
+  }
+  .pl-4 {
+    padding-left: calc(var(--spacing) * 4);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[11px\] {
+    font-size: 11px;
+  }
+  .text-\[15px\] {
+    font-size: 15px;
+  }
+  .text-\[16px\] {
+    font-size: 16px;
+  }
+  .text-\[17px\] {
+    font-size: 17px;
+  }
+  .text-\[64px\] {
+    font-size: 64px;
+  }
+  .text-\[clamp\(14px\,4\.4vw\,24px\)\] {
+    font-size: clamp(14px, 4.4vw, 24px);
+  }
+  .text-\[clamp\(24px\,6\.6vw\,32px\)\] {
+    font-size: clamp(24px, 6.6vw, 32px);
+  }
+  .leading-\[1\.05\] {
+    --tw-leading: 1.05;
+    line-height: 1.05;
+  }
+  .leading-\[1\.15\] {
+    --tw-leading: 1.15;
+    line-height: 1.15;
+  }
+  .leading-none {
+    --tw-leading: 1;
+    line-height: 1;
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .leading-snug {
+    --tw-leading: var(--leading-snug);
+    line-height: var(--leading-snug);
+  }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-\[0\.03em\] {
+    --tw-tracking: 0.03em;
+    letter-spacing: 0.03em;
+  }
+  .tracking-tight {
+    --tw-tracking: var(--tracking-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+  .break-all {
+    word-break: break-all;
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  .text-bg {
+    color: var(--bg);
+  }
+  .text-btn-fg {
+    color: var(--btn-fg);
+  }
+  .text-close-ink {
+    color: var(--close-ink);
+  }
+  .text-correct-ink {
+    color: var(--correct-ink);
+  }
+  .text-fg {
+    color: var(--fg);
+  }
+  .text-muted {
+    color: var(--muted);
+  }
+  .text-tile-ink {
+    color: var(--tile-ink);
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .line-through {
+    text-decoration-line: line-through;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .underline-offset-2 {
+    text-underline-offset: 2px;
+  }
+  .underline-offset-4 {
+    text-underline-offset: 4px;
+  }
+  .accent-current {
+    accent-color: currentcolor;
+  }
+  .opacity-0 {
+    opacity: 0%;
+  }
+  .opacity-60 {
+    opacity: 60%;
+  }
+  .opacity-100 {
+    opacity: 100%;
+  }
+  .shadow {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-lg {
+    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-xl {
+    --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .ring-1 {
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .ring-2 {
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .ring-black\/10 {
+    --tw-ring-color: color-mix(in srgb, #000 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-ring-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+    }
+  }
+  .ring-fg {
+    --tw-ring-color: var(--fg);
+  }
+  .ring-line {
+    --tw-ring-color: var(--border);
+  }
+  .filter {
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .delay-700 {
+    transition-delay: 700ms;
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+  .\[perspective\:600px\] {
+    perspective: 600px;
+  }
+  @media (hover: hover) {
+    .hover\:border-fg:hover {
+      border-color: var(--fg);
+    }
+    .hover\:bg-fg:hover {
+      background-color: var(--fg);
+    }
+    .hover\:bg-surface:hover {
+      background-color: var(--surface);
+    }
+    .hover\:text-bg:hover {
+      color: var(--bg);
+    }
+    .hover\:text-fg:hover {
+      color: var(--fg);
+    }
+    .hover\:underline:hover {
+      text-decoration-line: underline;
+    }
+    .hover\:opacity-90:hover {
+      opacity: 90%;
+    }
+  }
+  .focus\:border-fg:focus {
+    border-color: var(--fg);
+  }
+  .focus\:outline-none:focus {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+  .disabled\:opacity-40:disabled {
+    opacity: 40%;
+  }
+  .disabled\:opacity-50:disabled {
+    opacity: 50%;
+  }
+  .disabled\:opacity-60:disabled {
+    opacity: 60%;
+  }
+  @media (width >= 40rem) {
+    .sm\:mt-10 {
+      margin-top: calc(var(--spacing) * 10);
+    }
+    .sm\:w-\[150px\] {
+      width: 150px;
+    }
+    .sm\:flex-row {
+      flex-direction: row;
+    }
+    .sm\:items-center {
+      align-items: center;
+    }
+    .sm\:p-6 {
+      padding: calc(var(--spacing) * 6);
+    }
+    .sm\:px-3 {
+      padding-inline: calc(var(--spacing) * 3);
+    }
+    .sm\:pt-0 {
+      padding-top: 0px;
+    }
+  }
+  @media (max-height:700px) {
+    .\[\@media\(max-height\:700px\)\]\:mt-1 {
+      margin-top: var(--spacing);
+    }
+    .\[\@media\(max-height\:700px\)\]\:mt-3 {
+      margin-top: calc(var(--spacing) * 3);
+    }
+    .\[\@media\(max-height\:700px\)\]\:pt-2 {
+      padding-top: calc(var(--spacing) * 2);
+    }
+    .\[\@media\(max-height\:700px\)\]\:pt-3 {
+      padding-top: calc(var(--spacing) * 3);
+    }
+    .\[\@media\(max-height\:700px\)\]\:text-\[52px\] {
+      font-size: 52px;
+    }
+  }
+}
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1b;
+  --muted: #6b6f72;
+  --border: #e3e5e8;
+  --surface: #f5f6f7;
+  --track: #e3e5e8;
+  --tile-ink: #1a1a1b;
+  --correct: #a8d5a2;
+  --correct-ink: #4e8f48;
+  --close: #f2e2a0;
+  --close-ink: #b59a2c;
+  --miss: #dadde0;
+  --miss-ink: #7c8084;
+  --btn: #1a1a1b;
+  --btn-fg: #ffffff;
+  --focus: #2563eb;
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --bg: #141415;
+  --fg: #f1f1f2;
+  --muted: #a3a7ab;
+  --border: #36373a;
+  --surface: #1f2022;
+  --track: #36373a;
+  --correct: #95c98e;
+  --correct-ink: #8cc785;
+  --close: #e6d283;
+  --close-ink: #d9bf55;
+  --miss: #a5a9ae;
+  --miss-ink: #a5a9ae;
+  --btn: #f1f1f2;
+  --btn-fg: #141415;
+  --focus: #7aa7ff;
+  color-scheme: dark;
+}
+[data-contrast="high"] {
+  --correct: #f5793a;
+  --correct-ink: #b54708;
+  --close: #85c0f9;
+  --close-ink: #1f6fb2;
+  --miss: #c9cdd1;
+  --miss-ink: #5b5f63;
+}
+[data-theme="dark"][data-contrast="high"] {
+  --correct-ink: #f79a63;
+  --close-ink: #85c0f9;
+  --miss: #a5a9ae;
+  --miss-ink: #a5a9ae;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+.balance {
+  text-wrap: balance;
+}
+.guess-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  background: transparent;
+  cursor: pointer;
+  touch-action: pan-y;
+  --pct: 50%;
+}
+.guess-range::-webkit-slider-runnable-track {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--fg) 0 var(--pct), var(--track) var(--pct) 100%);
+}
+.guess-range::-moz-range-track {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--track);
+}
+.guess-range::-moz-range-progress {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--fg);
+}
+.guess-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 34px;
+  height: 34px;
+  margin-top: -12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--fg);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.18);
+  transition: transform 120ms ease;
+}
+.guess-range::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--fg);
+}
+.guess-range:active::-webkit-slider-thumb {
+  transform: scale(1.12);
+}
+.guess-range:focus-visible {
+  outline: none;
+}
+.guess-range:focus-visible::-webkit-slider-thumb {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.guess-range:focus-visible::-moz-range-thumb {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+@keyframes tile-flip {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-1px);
+  }
+  20%, 80% {
+    transform: translateX(3px);
+  }
+  30%, 50%, 70% {
+    transform: translateX(-6px);
+  }
+  40%, 60% {
+    transform: translateX(6px);
+  }
+}
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes toast-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+.anim-flip {
+  animation: tile-flip 420ms cubic-bezier(0.3, 1.3, 0.6, 1) both;
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+.anim-shake {
+  animation: shake 420ms ease both;
+}
+.anim-pop {
+  animation: pop-in 320ms cubic-bezier(0.3, 1.4, 0.6, 1) both;
+}
+.anim-fade-up {
+  animation: fade-up 360ms ease-out both;
+}
+.reveal-fill {
+  transition: width 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+dialog.modal {
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  max-width: min(440px, calc(100vw - 24px));
+  width: 100%;
+  max-height: calc(100dvh - 24px);
+  color: var(--fg);
+}
+dialog.modal::backdrop {
+  background: rgb(20 20 21 / 0.45);
+}
+[data-theme="dark"] dialog.modal::backdrop {
+  background: rgb(0 0 0 / 0.65);
+}
+dialog.modal[open] {
+  animation: fade-up 220ms ease-out both;
+}
+@media (max-height: 700px) {
+  .short-tight {
+    --gap-scale: 0.7;
+  }
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-divide-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-space-y-reverse: 0;
+      --tw-divide-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+      --tw-duration: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script>(()=>{var is=Object.create;var it=Object.defineProperty;var ls=Object.getOwnPropertyDescriptor;var us=Object.getOwnPropertyNames;var ds=Object.getPrototypeOf,cs=Object.prototype.hasOwnProperty;var ms=(e,t,a)=>t in e?it(e,t,{enumerable:!0,configurable:!0,writable:!0,value:a}):e[t]=a;var lt=(e,t)=>()=>{try{return t||e((t={exports:{}}).exports,t),t.exports}catch(a){throw t=0,a}};var ps=(e,t,a,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let s of us(t))!cs.call(e,s)&&s!==a&&it(e,s,{get:()=>t[s],enumerable:!(o=ls(t,s))||o.enumerable});return e};var l=(e,t,a)=>(a=e!=null?is(ds(e)):{},ps(t||!e||!e.__esModule?it(a,"default",{value:e,enumerable:!0}):a,e));var ut=(e,t,a)=>ms(e,typeof t!="symbol"?t+"":t,a);var j=lt((Us,jt)=>{jt.exports=window.React});var At=lt((Bs,Dt)=>{Dt.exports=window.ReactDOM});var p=lt((Zs,qt)=>{var Ht=window.React;function Rt(e,t,a){return Ht.createElement(e,a===void 0?t:Object.assign({},t,{key:a}))}qt.exports={jsx:Rt,jsxs:Rt,Fragment:Ht.Fragment}});var Ce=l(j()),os=l(At());var be=l(j());var je=["en","et","es"];var ce={en:"English",et:"Eesti",es:"Espa\xF1ol"},qe={en:"en",et:"et-EE",es:"es"};function ve(e){return typeof e=="string"&&je.includes(e)}function zt(e){for(let t of e){let a=t.toLowerCase().split("-")[0];if(ve(a))return a}return null}var ye="gtc:locale";function Pt(e,t){let a=e;for(let o of t.split("."))if(a&&typeof a=="object"&&o in a)a=a[o];else return;return a}function Lt(e,t,a){let o=qe[e],s=new Intl.PluralRules(o),n=new Intl.NumberFormat(o),r=c=>{let u=Pt(t,c);return u===void 0&&a?Pt(a,c):u},i=(c,u)=>c.replace(/\{(\w+)\}/g,(f,g)=>{if(!u||!(g in u))return f;let v=u[g];return typeof v=="number"?n.format(v):v}),d=((c,u)=>{let f=r(c);if(f&&typeof f=="object"&&!Array.isArray(f)){let g=typeof u?.count=="number"?u.count:0,v=f;f=v[s.select(g)]??v.other}return typeof f!="string"?c:i(f,u)});return d.list=c=>{let u=r(c);return Array.isArray(u)?u:[]},d.has=c=>r(c)!==void 0,d.locale=e,d}function Kt(e){let t=qe[e],a=new Intl.NumberFormat(t),o=new Map;return{number:s=>a.format(s),percent(s,n=0){let r=o.get(n);return r||(r=new Intl.NumberFormat(t,{style:"percent",maximumFractionDigits:n}),o.set(n,r)),r.format(s/100)},date(s,n="medium"){let r=new Date(`${s}T12:00:00Z`);return new Intl.DateTimeFormat(t,{timeZone:"UTC",dateStyle:n}).format(r)},localTime(s){return new Intl.DateTimeFormat(t,{hour:"numeric",minute:"2-digit"}).format(s)}}}var $t=l(p()),Gt=(0,be.createContext)(null);function _t({locale:e,messages:t,fallback:a,children:o}){let s=(0,be.useMemo)(()=>({locale:e,t:Lt(e,t,a),fmt:Kt(e)}),[e,t,a]);return(0,$t.jsx)(Gt.Provider,{value:s,children:o})}function h(){let e=(0,be.useContext)(Gt);if(!e)throw new Error("useI18n must be used inside <I18nProvider>");return e}var te=l(j());var R={player:"gtc:player",settings:"gtc:settings",records:"gtc:records",daily:"gtc:daily",helpSeen:"gtc:help-seen",langDismissed:"gtc:lang-suggest-dismissed"};function ke(e){try{return window.localStorage.getItem(e)}catch{return null}}function me(e,t){try{window.localStorage.setItem(e,t)}catch{}}function ct(e,t){let a=ke(e);if(!a)return t;try{return JSON.parse(a)}catch{return t}}var dt=new Set;function Ve(e){return dt.add(e),()=>dt.delete(e)}function mt(){for(let e of dt)e()}var Ge=null;function gs(){if(typeof crypto.randomUUID=="function")return crypto.randomUUID();let e=new Uint8Array(16);crypto.getRandomValues(e),e[6]=e[6]&15|64,e[8]=e[8]&63|128;let t=[...e].map(a=>a.toString(16).padStart(2,"0")).join("");return`${t.slice(0,8)}-${t.slice(8,12)}-${t.slice(12,16)}-${t.slice(16,20)}-${t.slice(20)}`}function pe(){let e=ke(R.player);return e&&/^[0-9a-f-]{36}$/i.test(e)?e:(Ge??(Ge=gs()),me(R.player,Ge),Ge)}function Vt(){return ke(R.player)}var hs={dark:!1,highContrast:!1},_e=null;function Fe(){return _e??(_e={...hs,...ct(R.settings,{})}),_e}function pt(e){_e=e,me(R.settings,JSON.stringify(e)),gt(e),mt()}function gt(e){let t=document.documentElement;t.dataset.theme=e.dark?"dark":"light",e.highContrast?t.dataset.contrast="high":delete t.dataset.contrast}var so=`try{var s=JSON.parse(localStorage.getItem('${R.settings}')||'{}');var d=document.documentElement;d.dataset.theme=s.dark?'dark':'light';if(s.highContrast)d.dataset.contrast='high'}catch(e){}`,De=null;function ht(){return De??(De=ct(R.records,[])),De}function Ft(e){let t=ht();t.some(a=>a.number===e.number)||(De=[...t,e],me(R.records,JSON.stringify(De)),mt())}var $e=null;function ft(){return $e??($e=ct(R.daily,{dailyNumber:null,prevDailyNumber:null})),$e}function vt(e){let t=ft();t.dailyNumber===e.dailyNumber&&t.prevDailyNumber===e.prevDailyNumber||($e=e,me(R.daily,JSON.stringify(e)),mt())}var xe={helpSeen:()=>ke(R.helpSeen)==="1",markHelpSeen:()=>me(R.helpSeen,"1"),langSuggestDismissed:()=>ke(R.langDismissed)==="1",dismissLangSuggest:()=>me(R.langDismissed,"1")};function Ot(e){return ke(e)}function Ut(e,t){me(e,t)}var b=l(p());function H({size:e=24,children:t,...a}){return(0,b.jsx)("svg",{width:e,height:e,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",focusable:"false",...a,children:t})}var Bt=e=>(0,b.jsxs)(H,{...e,children:[(0,b.jsx)("circle",{cx:"12",cy:"12",r:"9.5"}),(0,b.jsx)("path",{d:"M9.4 9.2a2.7 2.7 0 0 1 5.2 1c0 1.8-2.6 2.3-2.6 3.9"}),(0,b.jsx)("circle",{cx:"12",cy:"17.2",r:"0.6",fill:"currentColor"})]}),Yt=e=>(0,b.jsx)(H,{...e,children:(0,b.jsx)("path",{d:"M5 20V12M12 20V5M19 20v-8"})}),Wt=e=>(0,b.jsxs)(H,{...e,children:[(0,b.jsx)("circle",{cx:"12",cy:"12",r:"3"}),(0,b.jsx)("path",{d:"M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"})]}),Qt=e=>(0,b.jsxs)(H,{...e,children:[(0,b.jsx)("circle",{cx:"12",cy:"12",r:"9.5"}),(0,b.jsx)("path",{d:"M2.5 12h19M12 2.5c2.6 2.6 3.9 5.8 3.9 9.5s-1.3 6.9-3.9 9.5c-2.6-2.6-3.9-5.8-3.9-9.5S9.4 5.1 12 2.5z"})]}),Jt=e=>(0,b.jsx)(H,{...e,children:(0,b.jsx)("path",{d:"M6 6l12 12M18 6L6 18"})}),Oe=e=>(0,b.jsx)(H,{strokeWidth:3,...e,children:(0,b.jsx)("path",{d:"M5 12.5l4.5 4.5L19 7.5"})}),Xt=e=>(0,b.jsx)(H,{strokeWidth:2.75,...e,children:(0,b.jsx)("path",{d:"M12 19V5M6 11l6-6 6 6"})}),Zt=e=>(0,b.jsx)(H,{strokeWidth:2.75,...e,children:(0,b.jsx)("path",{d:"M12 5v14M6 13l6 6 6-6"})}),ea=e=>(0,b.jsx)(H,{strokeWidth:2.75,...e,children:(0,b.jsx)("path",{d:"M6 12l6-6 6 6M6 19l6-6 6 6"})}),ta=e=>(0,b.jsx)(H,{strokeWidth:2.75,...e,children:(0,b.jsx)("path",{d:"M6 5l6 6 6-6M6 12l6 6 6-6"})}),aa=e=>(0,b.jsx)(H,{...e,children:(0,b.jsx)("path",{d:"M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"})}),sa=e=>(0,b.jsx)(H,{strokeWidth:2.75,...e,children:(0,b.jsx)("path",{d:"M5 12h14"})}),oa=e=>(0,b.jsx)(H,{strokeWidth:2.75,...e,children:(0,b.jsx)("path",{d:"M12 5v14M5 12h14"})}),na=e=>(0,b.jsx)(H,{...e,children:(0,b.jsx)("path",{d:"M15 18l-6-6 6-6"})});var he=l(j());function _(e,t=""){return`/${e}${t}`}function ra(e,t){let a=new RegExp(`^/(${je.join("|")})(?=/|$)`);return a.test(e)?e.replace(a,`/${t}`):`/${t}${e==="/"?"":e}`}var bt="/en",yt=new Set;function ge(){return bt}function Ue(e){bt=e.split("?")[0]||"/en",window.scrollTo(0,0);for(let t of yt)t()}function ia(e){bt=e}function la(e){return yt.add(e),()=>yt.delete(e)}var B=l(p());function kt(e){Ut(ye,e),Ue(ra(ge(),e)+window.location.search)}function ua(){let{t:e,locale:t}=h(),[a,o]=(0,he.useState)(!1),s=(0,he.useRef)(null),n=(0,he.useRef)(null);(0,he.useEffect)(()=>{if(!a)return;let i=c=>{s.current?.contains(c.target)||o(!1)},d=c=>{c.key==="Escape"&&(o(!1),n.current?.focus())};return document.addEventListener("pointerdown",i),document.addEventListener("keydown",d),s.current?.querySelector('[aria-checked="true"]')?.focus(),()=>{document.removeEventListener("pointerdown",i),document.removeEventListener("keydown",d)}},[a]);let r=i=>{if(i.key!=="ArrowDown"&&i.key!=="ArrowUp")return;i.preventDefault();let d=[...s.current?.querySelectorAll('[role="menuitemradio"]')??[]],c=d.indexOf(document.activeElement);d[(c+(i.key==="ArrowDown"?1:-1)+d.length)%d.length]?.focus()};return(0,B.jsxs)("div",{ref:s,className:"relative",children:[(0,B.jsxs)("button",{ref:n,type:"button","aria-haspopup":"menu","aria-expanded":a,"aria-label":`${e("nav.language")}: ${ce[t]}`,onClick:()=>o(i=>!i),className:"flex h-10 items-center gap-1 rounded-full px-2 text-sm font-bold hover:bg-surface",children:[(0,B.jsx)(Qt,{size:20}),(0,B.jsx)("span",{className:"uppercase",children:t})]}),a&&(0,B.jsx)("div",{role:"menu","aria-label":e("nav.language"),onKeyDown:r,className:"absolute right-0 top-full z-40 mt-1 min-w-44 rounded-xl bg-bg p-1.5 shadow-lg ring-1 ring-line",children:je.map(i=>(0,B.jsxs)("button",{type:"button",role:"menuitemradio","aria-checked":i===t,lang:i,onClick:()=>i===t?o(!1):kt(i),className:"flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left text-[15px] hover:bg-surface",children:[(0,B.jsxs)("span",{children:[ce[i]," ",(0,B.jsx)("span",{className:"text-xs font-semibold uppercase text-muted",children:i})]}),i===t&&(0,B.jsx)(Oe,{size:16})]},i))})]})}var Be=l(j());var re=l(p());function da(){let{t:e,locale:t}=h(),[a,o]=(0,Be.useState)(null);return(0,Be.useEffect)(()=>{if(Ot(ye)||xe.langSuggestDismissed())return;let s=zt(navigator.languages??[navigator.language]);s&&s!==t&&o(s)},[t]),a?(0,re.jsx)("div",{lang:a,className:"border-b border-line bg-surface",children:(0,re.jsxs)("div",{className:"mx-auto flex max-w-[480px] flex-wrap items-center justify-between gap-x-3 gap-y-1 px-4 py-2 text-sm",children:[(0,re.jsx)("span",{children:e("langSuggest.text",{language:ce[a]})}),(0,re.jsxs)("span",{className:"flex gap-1",children:[(0,re.jsx)("button",{type:"button",onClick:()=>kt(a),className:"rounded-full bg-btn px-3 py-1 font-bold text-btn-fg",children:e("langSuggest.switch")}),(0,re.jsx)("button",{type:"button",onClick:()=>{xe.dismissLangSuggest(),o(null)},className:"rounded-full px-3 py-1 font-semibold text-muted hover:text-fg",children:e("langSuggest.dismiss")})]})]})}):null}var we=l(j());var ie=l(p());function le({open:e,onClose:t,title:a,children:o}){let s=(0,we.useRef)(null),n=(0,we.useId)(),{t:r}=h();return(0,we.useEffect)(()=>{let i=s.current;i&&(e&&!i.open&&i.showModal(),!e&&i.open&&i.close())},[e]),(0,ie.jsx)("dialog",{ref:s,className:"modal","aria-labelledby":n,onClose:t,onCancel:i=>{i.preventDefault(),t()},onClick:i=>{i.target===s.current&&t()},children:e&&(0,ie.jsxs)("div",{className:"rounded-2xl bg-bg p-5 pb-6 shadow-xl ring-1 ring-line sm:p-6",children:[(0,ie.jsxs)("div",{className:"mb-4 flex items-center justify-between gap-4",children:[(0,ie.jsx)("h2",{id:n,className:"text-xl font-extrabold tracking-tight",children:a}),(0,ie.jsx)("button",{type:"button",onClick:t,className:"-mr-2 grid size-10 place-items-center rounded-full text-muted hover:bg-surface hover:text-fg","aria-label":r("nav.close"),children:(0,ie.jsx)(Jt,{size:22})})]}),o]})})}var Y=l(p()),fs={correct:"bg-correct",close:"bg-close",miss:"bg-miss"};function xt({color:e,direction:t,size:a=20}){return e==="correct"||t==="none"?(0,Y.jsx)(Oe,{size:a}):e==="close"?t==="up"?(0,Y.jsx)(Xt,{size:a}):(0,Y.jsx)(Zt,{size:a}):t==="up"?(0,Y.jsx)(ea,{size:a}):(0,Y.jsx)(ta,{size:a})}function Se({value:e,color:t,direction:a,label:o,animate:s=!1,delay:n=0,size:r="md"}){let i=r==="sm";return(0,Y.jsxs)("div",{role:o?"img":void 0,"aria-label":o,className:["flex items-center justify-center gap-1 rounded-xl font-extrabold text-tile-ink tnum",i?"h-11 min-w-[72px] px-2 text-lg":"h-[60px] w-full text-2xl",fs[t],s?"anim-flip":""].join(" "),style:s?{animationDelay:`${n}ms`}:void 0,children:[(0,Y.jsx)("span",{children:e}),(0,Y.jsx)(xt,{color:t,direction:a,size:i?18:22})]})}function ca({label:e}){return(0,Y.jsx)("div",{role:"img","aria-label":e,className:"h-[60px] w-full rounded-xl border-2 border-dashed border-line"})}function wt(e){return e.toISOString().slice(0,10)}function vs(e){if(!/^\d{4}-\d{2}-\d{2}$/.test(e))throw new Error(`Invalid date: ${e}`);return new Date(`${e}T00:00:00.000Z`)}function Ye(e,t){return wt(new Date(vs(e).getTime()+t*864e5))}function Ae(e){let t=new Date(e.getTime());return t.setUTCHours(24,0,0,0),t}function ma(e){return Ae(e).getTime()-e.getTime()}function pa(e){let t=Math.max(0,Math.floor(e/1e3)),a=Math.floor(t/3600),o=Math.floor(t%3600/60),s=t%60;return[a,o,s].map(n=>String(n).padStart(2,"0")).join(":")}var J=l(j());function St(e){return Number.isFinite(e)?Math.min(100,Math.max(0,Math.round(e))):50}function ga(e){return Math.round(e)}function ys(e,t){let a=Math.abs(e-t);return a<=3?"correct":a<=10?"close":"miss"}function bs(e,t){return Math.abs(e-t)<=3?"none":t>e?"up":"down"}function ha(e,t){return{value:e,color:ys(e,t),direction:bs(e,t)}}function fa(e,t){for(let a=0;a<e.length&&a<3;a++){let o=Math.abs(e[a]-t);if(o<=3)return{finished:!0,solvedIn:a+1,finalError:o}}return e.length>=3?{finished:!0,solvedIn:null,finalError:Math.abs(e[2]-t)}:{finished:!1,solvedIn:null,finalError:null}}function ze(e){return Math.min(Math.floor(St(e)/5),19)}function va(e,t){let a=0,o=new Set,s=e;for(;s!==null&&!o.has(s);){o.add(s);let n=t.get(s);if(!n||n.solvedIn===null)break;a++,s=n.prevDaily}return a}function ya(e,t){let a=new Array(4).fill(0),o=0,s=0;for(let u of e)u.solvedIn===null?a[3]++:(a[u.solvedIn-1]++,o++),s+=u.finalError;let n=new Map;for(let u of e)u.mode==="daily"&&n.set(u.number,u);let r=null;t.dailyNumber!==null&&n.has(t.dailyNumber)?r=t.dailyNumber:t.prevDailyNumber!==null&&n.has(t.prevDailyNumber)&&(r=t.prevDailyNumber);let i=va(r,n),d=i;for(let u of n.keys())d=Math.max(d,va(u,n));let c=e.length;return{played:c,wins:o,winPct:c?Math.round(o/c*100):0,currentStreak:i,bestStreak:d,distribution:a,avgError:c?Math.round(s/c*10)/10:null}}var ks=[],xs={dark:!1,highContrast:!1},ws={dailyNumber:null,prevDailyNumber:null};function We(){return(0,J.useSyncExternalStore)(Ve,Fe,()=>xs)}function Ss(){return(0,J.useSyncExternalStore)(Ve,ht,()=>ks)}function ba(){let e=Ss(),t=(0,J.useSyncExternalStore)(Ve,ft,()=>ws);return ya(e,t)}function ka(e){let[t,a]=(0,J.useState)(null);return(0,J.useEffect)(()=>{let o=!1,s=()=>{let r=ma(new Date);a(r),r<=1e3&&!o&&(o=!0,setTimeout(()=>e?.(),1500))};s();let n=setInterval(s,1e3);return()=>clearInterval(n)},[e]),t}function xa(){let[e,t]=(0,J.useState)(!1);return(0,J.useEffect)(()=>t(!0),[]),e}var M=l(p());function wa({open:e,onClose:t}){let{t:a,fmt:o}=h(),s=xa(),n=[a("help.step1"),a("help.step2"),a("help.step3")];return(0,M.jsxs)(le,{open:e,onClose:t,title:a("help.title"),children:[(0,M.jsx)("ol",{className:"space-y-3",children:n.map((r,i)=>(0,M.jsxs)("li",{className:"flex gap-3 text-[15px] leading-snug",children:[(0,M.jsx)("span",{className:"grid size-7 shrink-0 place-items-center rounded-full bg-surface text-sm font-bold tnum",children:i+1}),(0,M.jsx)("span",{className:"pt-0.5",children:r})]},i))}),(0,M.jsxs)("div",{className:"mt-5 space-y-2.5 rounded-xl bg-surface p-4",children:[(0,M.jsx)(Nt,{tile:(0,M.jsx)(Se,{size:"sm",value:60,color:"correct",direction:"none"}),text:a("help.legendCorrect")}),(0,M.jsx)(Nt,{tile:(0,M.jsx)(Se,{size:"sm",value:52,color:"close",direction:"up"}),text:a("help.legendClose")}),(0,M.jsx)(Nt,{tile:(0,M.jsx)(Se,{size:"sm",value:85,color:"miss",direction:"down"}),text:a("help.legendMiss")}),(0,M.jsx)("p",{className:"pt-1 text-sm text-muted",children:a("help.arrows")})]}),s&&(0,M.jsx)("p",{className:"mt-4 text-sm text-muted",children:a("help.newDaily",{time:o.localTime(Ae(new Date))})}),(0,M.jsx)("button",{type:"button",autoFocus:!0,onClick:t,className:"mt-5 h-12 w-full rounded-full bg-btn text-base font-bold text-btn-fg hover:opacity-90",children:a("help.play")})]})}function Nt({tile:e,text:t}){return(0,M.jsxs)("div",{className:"flex items-center gap-3",children:[(0,M.jsx)("div",{className:"w-[84px] shrink-0",children:e}),(0,M.jsx)("span",{className:"text-sm leading-snug",children:t})]})}var N=l(p());function Sa({open:e,onClose:t}){let{t:a,fmt:o}=h(),s=ba(),n=Math.max(1,...s.distribution),r=["1","2","3","X"];return(0,N.jsxs)(le,{open:e,onClose:t,title:a("stats.title"),children:[s.played===0?(0,N.jsx)("p",{className:"py-4 text-[15px] text-muted",children:a("stats.empty")}):(0,N.jsxs)(N.Fragment,{children:[(0,N.jsxs)("dl",{className:"grid grid-cols-3 gap-y-4 text-center",children:[(0,N.jsx)(Pe,{value:o.number(s.played),label:a("stats.played")}),(0,N.jsx)(Pe,{value:o.number(s.winPct),label:a("stats.winPct")}),(0,N.jsx)(Pe,{value:s.avgError===null?"\u2013":o.number(s.avgError),label:a("stats.avgError")}),(0,N.jsx)(Pe,{value:o.number(s.currentStreak),label:a("stats.currentStreak")}),(0,N.jsx)(Pe,{value:o.number(s.bestStreak),label:a("stats.bestStreak")})]}),(0,N.jsx)("h3",{className:"mb-2 mt-6 text-sm font-bold",children:a("stats.distribution")}),(0,N.jsx)("ul",{className:"space-y-1.5",children:s.distribution.map((i,d)=>(0,N.jsxs)("li",{className:"flex items-center gap-2","aria-label":a("stats.distributionRow",{label:r[d],count:i}),children:[(0,N.jsx)("span",{className:"w-4 text-sm font-bold tnum","aria-hidden":"true",children:r[d]}),(0,N.jsx)("span",{className:"flex-1","aria-hidden":"true",children:(0,N.jsx)("span",{className:`flex h-6 min-w-7 items-center justify-end rounded-md px-2 text-sm font-bold tnum text-tile-ink ${d===3?"bg-miss":"bg-correct"}`,style:{width:`${Math.max(8,i/n*100)}%`},children:i})})]},d))})]}),(0,N.jsx)("p",{className:"mt-5 text-xs text-muted",children:a("stats.localOnly")})]})}function Pe({value:e,label:t}){return(0,N.jsxs)("div",{className:"flex flex-col-reverse items-center px-1",children:[(0,N.jsx)("dt",{className:"text-xs leading-tight text-muted",children:t}),(0,N.jsx)("dd",{className:"text-3xl font-extrabold tnum",children:e})]})}var Ta=l(j());var A=l(p());function Ea({open:e,onClose:t}){let{t:a,locale:o}=h(),s=We();return(0,A.jsxs)(le,{open:e,onClose:t,title:a("settings.title"),children:[(0,A.jsxs)("div",{className:"divide-y divide-line",children:[(0,A.jsx)(Na,{label:a("settings.dark"),hint:a("settings.darkHint"),checked:s.dark,onChange:n=>pt({...s,dark:n})}),(0,A.jsx)(Na,{label:a("settings.contrast"),hint:a("settings.contrastHint"),checked:s.highContrast,onChange:n=>pt({...s,highContrast:n})})]}),(0,A.jsxs)("nav",{className:"mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-line pt-4 text-sm font-semibold",children:[(0,A.jsx)("a",{onClick:t,className:"underline-offset-4 hover:underline",href:_(o,"/archive"),children:a("nav.archive")}),(0,A.jsx)("a",{onClick:t,className:"underline-offset-4 hover:underline",href:_(o,"/suggest"),children:a("nav.suggest")}),(0,A.jsx)("a",{onClick:t,className:"underline-offset-4 hover:underline",href:_(o,"/privacy"),children:a("nav.privacy")})]})]})}function Na({label:e,hint:t,checked:a,onChange:o}){let s=(0,Ta.useId)();return(0,A.jsxs)("div",{className:"flex items-center justify-between gap-4 py-3.5",children:[(0,A.jsxs)("label",{htmlFor:s,className:"cursor-pointer",children:[(0,A.jsx)("span",{className:"block font-semibold",children:e}),(0,A.jsx)("span",{className:"block text-sm leading-snug text-muted",children:t})]}),(0,A.jsx)("button",{id:s,type:"button",role:"switch","aria-checked":a,onClick:()=>o(!a),className:`relative h-7 w-12 shrink-0 rounded-full transition-colors ${a?"bg-btn":"bg-track"}`,children:(0,A.jsx)("span",{className:`absolute top-1 left-1 size-5 rounded-full bg-bg shadow transition-transform ${a?"translate-x-5":""}`})})]})}var X=l(j()),Le=l(p()),Ca=(0,X.createContext)(()=>{});function Ia({children:e}){let[t,a]=(0,X.useState)(null),o=(0,X.useRef)(null),s=(0,X.useCallback)(n=>{o.current&&clearTimeout(o.current),a({text:n,id:Date.now()}),o.current=setTimeout(()=>a(null),2200)},[]);return(0,Le.jsxs)(Ca.Provider,{value:s,children:[e,(0,Le.jsx)("div",{"aria-live":"polite",role:"status",className:"pointer-events-none fixed inset-x-0 top-0 z-50",children:t&&(0,Le.jsx)("div",{className:"absolute left-1/2 top-[72px] rounded-lg bg-btn px-4 py-2.5 text-sm font-semibold text-btn-fg shadow-lg",style:{animation:"toast-in 180ms ease-out both"},children:t.text},t.id)})]})}function Qe(){return(0,X.useContext)(Ca)}var E=l(p()),Ns=(0,te.createContext)({open:()=>{}});function Ma({children:e}){let{t,locale:a}=h(),[o,s]=(0,te.useState)(null);(0,te.useEffect)(()=>{gt(Fe()),/^\/[a-z]{2}\/?$/.test(ge())&&!xe.helpSeen()&&s("help")},[]);let n=(0,te.useCallback)(()=>{o==="help"&&xe.markHelpSeen(),s(null)},[o]),r="grid size-10 place-items-center rounded-full hover:bg-surface";return(0,E.jsx)(Ns.Provider,{value:{open:s},children:(0,E.jsxs)(Ia,{children:[(0,E.jsxs)("div",{className:"flex min-h-dvh flex-col",children:[(0,E.jsx)(da,{}),(0,E.jsx)("header",{className:"border-b border-line",children:(0,E.jsxs)("div",{className:"mx-auto flex h-14 max-w-[600px] items-center gap-1 px-2 sm:px-3",children:[(0,E.jsx)("div",{className:"flex shrink-0 sm:w-[150px]",children:(0,E.jsx)("button",{type:"button",className:r,"aria-label":t("nav.help"),onClick:()=>s("help"),children:(0,E.jsx)(Bt,{size:23})})}),(0,E.jsx)("a",{href:_(a),className:"min-w-0 flex-1 px-1 text-center text-[clamp(14px,4.4vw,24px)] font-extrabold leading-[1.05] tracking-[0.03em] balance",children:t("app.logo")}),(0,E.jsxs)("div",{className:"flex shrink-0 items-center justify-end sm:w-[150px]",children:[(0,E.jsx)("button",{type:"button",className:r,"aria-label":t("nav.stats"),onClick:()=>s("stats"),children:(0,E.jsx)(Yt,{size:23})}),(0,E.jsx)("button",{type:"button",className:r,"aria-label":t("nav.settings"),onClick:()=>s("settings"),children:(0,E.jsx)(Wt,{size:22})}),(0,E.jsx)(ua,{})]})]})}),(0,E.jsx)("main",{className:"flex flex-1 flex-col",children:e})]}),(0,E.jsx)(wa,{open:o==="help",onClose:n}),(0,E.jsx)(Sa,{open:o==="stats",onClose:n}),(0,E.jsx)(Ea,{open:o==="settings",onClose:n})]})})}var D=l(j());var Ke=l(p());function Je(e,t,a){let o=e(`game.verdict.${a.color}`,{direction:a.direction==="none"?"":e(`game.direction.${a.direction}`)});return e("game.tileLabel",{n:t,value:a.value,verdict:o})}function ja({guesses:e,animateFrom:t}){let{t:a}=h();return(0,Ke.jsx)("ol",{className:"grid grid-cols-3 gap-2.5","aria-label":a("result.yourGuesses"),children:Array.from({length:3},(o,s)=>{let n=e[s];return(0,Ke.jsx)("li",{className:"[perspective:600px]",children:n?(0,Ke.jsx)(Se,{value:n.value,color:n.color,direction:n.direction,label:Je(a,s+1,n),animate:s>=t}):(0,Ke.jsx)(ca,{label:a("game.tileEmpty",{n:s+1})})},n?`g${s}-${n.value}`:`e${s}`)})})}var Da=l(j());var $=l(p());function Aa({value:e,onChange:t,onSubmit:a,attemptsLeft:o,busy:s,shakeKey:n}){let{t:r,fmt:i}=h(),d=(0,Da.useId)(),c=f=>t(St(f)),u="grid size-12 shrink-0 place-items-center rounded-full border-2 border-line text-fg hover:border-fg disabled:opacity-40";return(0,$.jsxs)("form",{className:"flex flex-col",onSubmit:f=>{f.preventDefault(),s||a()},children:[(0,$.jsx)("output",{htmlFor:d,className:`block text-center text-[64px] font-extrabold leading-none tracking-tight tnum [@media(max-height:700px)]:text-[52px] ${n?"anim-shake":""}`,"aria-hidden":"true",children:i.percent(e)},n),(0,$.jsxs)("div",{className:"mt-3 flex items-center gap-3",children:[(0,$.jsx)("button",{type:"button",className:u,onClick:()=>c(e-1),disabled:e<=0,"aria-label":r("game.decrease"),children:(0,$.jsx)(sa,{size:20})}),(0,$.jsx)("input",{id:d,type:"range",min:0,max:100,step:1,value:e,onChange:f=>c(Number(f.target.value)),"aria-label":r("game.sliderLabel"),"aria-valuetext":i.percent(e),className:"guess-range",style:{"--pct":`${e}%`}}),(0,$.jsx)("button",{type:"button",className:u,onClick:()=>c(e+1),disabled:e>=100,"aria-label":r("game.increase"),children:(0,$.jsx)(oa,{size:20})})]}),(0,$.jsx)("button",{type:"submit",disabled:s,className:"mt-4 h-14 w-full rounded-full bg-btn text-lg font-extrabold text-btn-fg transition-opacity hover:opacity-90 disabled:opacity-60",children:r(s?"game.sending":"game.guess")}),(0,$.jsx)("p",{className:"mt-2 text-center text-sm text-muted",children:r("game.attemptsLeft",{count:o})})]})}var Xe=l(j());var z=l(p()),za={correct:"bg-correct",close:"bg-close",miss:"bg-miss"};function Pa({answer:e,guesses:t,animate:a}){let{t:o,fmt:s}=h(),[n,r]=(0,Xe.useState)(!a);(0,Xe.useEffect)(()=>{if(!a)return;let g=requestAnimationFrame(()=>requestAnimationFrame(()=>r(!0)));return()=>cancelAnimationFrame(g)},[a]);let i=a?1100:0,d=new Map,c=[];[...t.keys()].sort((g,v)=>t[g].value-t[v].value).forEach(g=>{let v=t[g].value,y=c.findIndex(k=>v-k>=15);y===-1&&(y=c.length),c[y]=v,d.set(g,y)});let u=Math.max(1,c.length),f=e>=22;return(0,z.jsxs)("figure",{className:"w-full","aria-label":`${o("result.realAnswer")}: ${s.percent(e)}`,children:[(0,z.jsx)("div",{className:"relative",style:{height:`${u*32+4}px`},"aria-hidden":"true",children:t.map((g,v)=>(0,z.jsxs)("div",{className:`absolute -translate-x-1/2 ${a?"anim-pop":""}`,style:{left:`clamp(24px, ${g.value}%, calc(100% - 24px))`,bottom:"4px",animationDelay:`${i+v*140}ms`},children:[(0,z.jsxs)("div",{className:`flex h-7 items-center gap-0.5 rounded-md px-1.5 text-xs font-extrabold text-tile-ink tnum ring-1 ring-black/10 ${za[g.color]}`,children:[g.value,(0,z.jsx)(xt,{color:g.color,direction:g.direction,size:12})]}),(0,z.jsx)("div",{className:`mx-auto w-0.5 ${za[g.color]}`,style:{height:`${6+(d.get(v)??0)*32}px`}})]},v))}),(0,z.jsxs)("div",{className:"relative h-12 overflow-hidden rounded-xl bg-track","aria-hidden":"true",children:[(0,z.jsx)("div",{className:"reveal-fill absolute inset-y-0 left-0 flex items-center justify-end rounded-xl bg-fg",style:{width:n?`${e}%`:"0%"},children:f&&(0,z.jsx)("span",{className:`pr-3 text-xl font-extrabold text-bg tnum transition-opacity duration-300 ${n?"opacity-100 delay-700":"opacity-0"}`,children:s.percent(e)})}),!f&&(0,z.jsx)("span",{className:`absolute inset-y-0 flex items-center pl-2 text-xl font-extrabold tnum transition-opacity duration-300 ${n?"opacity-100 delay-700":"opacity-0"}`,style:{left:`${e}%`},children:s.percent(e)})]}),(0,z.jsxs)("div",{className:"mt-1 flex justify-between text-xs text-muted tnum","aria-hidden":"true",children:[(0,z.jsx)("span",{children:s.percent(0)}),(0,z.jsx)("span",{children:s.percent(50)}),(0,z.jsx)("span",{children:s.percent(100)})]})]})}var q=l(p());function La({buckets:e,answer:t,mine:a}){let{t:o,fmt:s}=h(),n=Math.max(1,...e),r=a===null?-1:ze(a);return(0,q.jsxs)("figure",{children:[(0,q.jsx)("figcaption",{className:"mb-6 text-sm font-bold",children:o("result.histogramTitle")}),(0,q.jsxs)("div",{className:"relative",children:[(0,q.jsx)("ol",{className:"flex h-20 items-end gap-[3px]",children:e.map((i,d)=>{let c=d*5,u=d===19?100:d*5+4;return(0,q.jsxs)("li",{className:"flex h-full flex-1 items-end",children:[(0,q.jsx)("span",{className:"sr-only",children:i>0?o("result.histogramLabel",{count:i,from:s.percent(c),to:s.percent(u)}):""}),(0,q.jsx)("span",{"aria-hidden":"true",className:`block w-full rounded-t-[3px] ${d===r?"bg-fg":"bg-miss"}`,style:{height:i===0?"2px":`${Math.max(6,i/n*100)}%`}})]},d)})}),(0,q.jsx)("div",{"aria-hidden":"true",className:"pointer-events-none absolute -top-1 bottom-0 w-0.5 -translate-x-1/2 bg-correct-ink",style:{left:`${t}%`},children:(0,q.jsx)("span",{className:"absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-bold text-correct-ink tnum",children:s.percent(t)})})]}),(0,q.jsxs)("div",{className:"mt-1 flex justify-between text-xs text-muted tnum","aria-hidden":"true",children:[(0,q.jsx)("span",{children:s.percent(0)}),(0,q.jsx)("span",{children:s.percent(100)})]})]})}var Ka={correct:{normal:"\u{1F7E9}",contrast:"\u{1F7E7}"},close:{normal:"\u{1F7E8}",contrast:"\u{1F7E6}"},miss:{normal:"\u2B1C",contrast:"\u2B1C"}},Ts={up:"\u2B06\uFE0F",down:"\u2B07\uFE0F",none:""};function Es(e,t=!1){return e.map(a=>{let o=Ka[a.color]??Ka.miss;return(t?o.contrast:o.normal)+(Ts[a.direction]??"")}).join(" ")}function Ra(e){let t=`${e.solvedIn??"X"}/${3}`;return[`${e.title} #${e.number} ${t}${e.archive&&e.archiveLabel?` (${e.archiveLabel})`:""}`,Es(e.guesses,e.highContrast),`\xB1${e.finalError} \xB7 ${e.host}`].join(`
+`)}var Ha={note:"Seed bank. All translations are imported with reviewed = false: an admin must review every language before a question can be scheduled.",questions:[{key:"milk-before-cereal",en:"Do you pour the milk in before the cereal?",et:"Kas valad piima kaussi enne helbeid?",es:"\xBFPones la leche antes que el cereal?"},{key:"phone-in-water",en:"Have you ever dropped your phone in water?",et:"Kas su telefon on kunagi vette kukkunud?",es:"\xBFAlguna vez se te cay\xF3 el tel\xE9fono al agua?"},{key:"last-page-first",en:"Have you ever read the last page of a book before finishing it?",et:"Kas oled kunagi piilunud raamatu viimast lehek\xFClge enne, kui oled l\xF5puni j\xF5udnud?",es:"\xBFAlguna vez has le\xEDdo la \xFAltima p\xE1gina de un libro antes de terminarlo?"},{key:"raw-potato",en:"Have you ever eaten a raw potato?",et:"Kas oled kunagi toorest kartulit s\xF6\xF6nud?",es:"\xBFAlguna vez has comido papa cruda?"},{key:"sleep-in-socks",en:"Do you sleep with socks on?",et:"Kas magad sokkidega?",es:"\xBFDuermes con calcetines?"},{key:"talk-to-plant",en:"Have you ever talked to a plant?",et:"Kas oled kunagi taimega r\xE4\xE4kinud?",es:"\xBFAlguna vez le has hablado a una planta?"},{key:"sing-in-shower",en:"Do you sing in the shower?",et:"Kas laulad du\u0161i all?",es:"\xBFCantas en la ducha?"},{key:"snooze-once",en:"Do you usually hit snooze at least once?",et:"Kas l\xFCkkad \xE4ratuse tavaliselt v\xE4hemalt korra edasi?",es:"\xBFSueles posponer la alarma al menos una vez?"},{key:"pineapple-pizza",en:"Would you eat pizza with pineapple on it?",et:"Kas s\xF6\xF6ksid ananassiga pitsat?",es:"\xBFComer\xEDas pizza con pi\xF1a?"},{key:"remember-dreams",en:"Do you usually remember your dreams?",et:"Kas m\xE4letad tavaliselt oma unen\xE4gusid?",es:"\xBFSueles recordar tus sue\xF1os?"},{key:"finger-whistle",en:"Can you whistle with your fingers?",et:"Kas oskad s\xF5rmedega vilistada?",es:"\xBFSabes silbar con los dedos?"},{key:"tongue-roll",en:"Can you roll your tongue into a tube?",et:"Kas suudad keelt toruks rullida?",es:"\xBFPuedes enrollar la lengua en forma de tubo?"},{key:"wiggle-ears",en:"Can you wiggle your ears?",et:"Kas oskad oma k\xF5rvu liigutada?",es:"\xBFPuedes mover las orejas?"},{key:"cried-at-movie",en:"Have you cried at a movie in the past year?",et:"Kas oled viimase aasta jooksul filmi vaadates nutnud?",es:"\xBFHas llorado viendo una pel\xEDcula en el \xFAltimo a\xF1o?"},{key:"same-breakfast",en:"Do you eat the same breakfast most days?",et:"Kas s\xF6\xF6d enamikul p\xE4evadel sama hommikus\xF6\xF6ki?",es:"\xBFDesayunas lo mismo casi todos los d\xEDas?"},{key:"reply-within-hour",en:"Do you usually reply to messages within an hour?",et:"Kas vastad s\xF5numitele tavaliselt tunni aja jooksul?",es:"\xBFSueles responder los mensajes en menos de una hora?"},{key:"unread-emails",en:"Do you have more than 100 unread emails?",et:"Kas sul on \xFCle saja lugemata e-kirja?",es:"\xBFTienes m\xE1s de cien correos sin leer?"},{key:"phone-last-thing",en:"Is your phone usually the last thing you look at before sleep?",et:"Kas telefon on tavaliselt viimane asi, mida enne magamaminekut vaatad?",es:"\xBFLo \xFAltimo que miras antes de dormir suele ser el tel\xE9fono?"},{key:"talk-to-yourself",en:"Do you talk to yourself out loud?",et:"Kas r\xE4\xE4gid vahel iseendaga valjusti?",es:"\xBFHablas en voz alta cuando est\xE1s a solas?"},{key:"made-bed",en:"Did you make your bed this morning?",et:"Kas tegid t\xE4na hommikul voodi \xFCles?",es:"\xBFHiciste la cama esta ma\xF1ana?"},{key:"lost-keys-month",en:"Have you lost your keys in the past month?",et:"Kas oled viimase kuu jooksul oma v\xF5tmed \xE4ra kaotanud?",es:"\xBFHas perdido las llaves en el \xFAltimo mes?"},{key:"stairs-two-at-a-time",en:"Do you take the stairs two at a time?",et:"Kas v\xF5tad trepist \xFCles minnes kaks astet korraga?",es:"\xBFSubes las escaleras de dos en dos?"},{key:"name-objects",en:"Do you give names to objects, like your bike or your plants?",et:"Kas annad esemetele nimesid, n\xE4iteks oma jalgrattale v\xF5i taimedele?",es:"\xBFLes pones nombre a objetos, como tu bicicleta o tus plantas?"},{key:"ate-insect",en:"Have you ever eaten an insect on purpose?",et:"Kas oled kunagi meelega putukat s\xF6\xF6nud?",es:"\xBFAlguna vez has comido un insecto a prop\xF3sito?"},{key:"shooting-star",en:"Have you ever seen a shooting star?",et:"Kas oled kunagi langevat t\xE4hte n\xE4inud?",es:"\xBFAlguna vez has visto una estrella fugaz?"},{key:"ridden-horse",en:"Have you ever ridden a horse?",et:"Kas oled kunagi hobusega ratsutanud?",es:"\xBFAlguna vez has montado a caballo?"},{key:"swum-in-sea",en:"Have you ever swum in the sea?",et:"Kas oled kunagi meres ujunud?",es:"\xBFAlguna vez has nadado en el mar?"},{key:"touched-snow",en:"Have you ever touched real snow?",et:"Kas oled kunagi p\xE4ris lund katsunud?",es:"\xBFAlguna vez has tocado nieve de verdad?"},{key:"sun-sneeze",en:"Do you sneeze when you look into bright light?",et:"Kas aevastad, kui vaatad eredasse valgusse?",es:"\xBFEstornudas cuando miras una luz brillante?"},{key:"pizza-crust",en:"Do you eat the crust of your pizza?",et:"Kas s\xF6\xF6d pitsa \xE4\xE4red \xE4ra?",es:"\xBFTe comes los bordes de la pizza?"},{key:"cold-shower",en:"Have you taken a cold shower on purpose this year?",et:"Kas oled sel aastal meelega k\xFClma du\u0161i all k\xE4inud?",es:"\xBFTe has dado una ducha fr\xEDa a prop\xF3sito este a\xF1o?"},{key:"ketchup-fridge",en:"Do you keep ketchup in the fridge?",et:"Kas hoiad ket\u0161upit k\xFClmkapis?",es:"\xBFGuardas el k\xE9tchup en el refrigerador?"},{key:"toilet-roll-over",en:"Does your toilet roll hang with the paper over the front, not against the wall?",et:"Kas su tualettpaberirull ripub nii, et paberiots on eespool, mitte seina pool?",es:"\xBFTu rollo de papel higi\xE9nico cuelga con el papel por delante y no pegado a la pared?"},{key:"danced-alone",en:"Have you danced alone in your room this month?",et:"Kas oled sel kuul \xFCksi oma toas tantsinud?",es:"\xBFHas bailado a solas en tu cuarto este mes?"},{key:"check-movie-length",en:"Do you check how long a movie is before starting it?",et:"Kas vaatad enne filmi alustamist, kui pikk see on?",es:"\xBFMiras cu\xE1nto dura una pel\xEDcula antes de empezar a verla?"},{key:"rewatched-ten-times",en:"Have you watched the same movie more than ten times?",et:"Kas oled m\xF5nda filmi vaadanud \xFCle k\xFCmne korra?",es:"\xBFHas visto la misma pel\xEDcula m\xE1s de diez veces?"},{key:"eat-in-bed",en:"Do you eat in bed?",et:"Kas s\xF6\xF6d voodis?",es:"\xBFComes en la cama?"},{key:"chew-pens",en:"Do you chew on pens or pencils?",et:"Kas n\xE4rid pastakaid v\xF5i pliiatseid?",es:"\xBFMuerdes bol\xEDgrafos o l\xE1pices?"},{key:"count-stairs",en:"Do you count the steps when you walk up stairs?",et:"Kas loed trepist \xFCles minnes astmeid?",es:"\xBFCuentas los escalones al subir una escalera?"},{key:"lucky-item",en:"Do you have a lucky item, like a shirt or a pen?",et:"Kas sul on m\xF5ni \xF5nnetooja ese, n\xE4iteks s\xE4rk v\xF5i pastakas?",es:"\xBFTienes alg\xFAn objeto de la suerte, como una camiseta o un bol\xEDgrafo?"},{key:"read-terms",en:"Have you ever read the full terms and conditions before clicking \u201CAgree\u201D?",et:"Kas oled kunagi kasutustingimused enne n\xF5ustumist t\xE4ielikult l\xE4bi lugenud?",es:"\xBFAlguna vez has le\xEDdo completos los t\xE9rminos y condiciones antes de aceptar?"},{key:"waved-back",en:"Have you ever waved back at someone who was waving at someone else?",et:"Kas oled kunagi lehvitanud vastu kellelegi, kes tegelikult lehvitas kellelegi teisele?",es:"\xBFAlguna vez has devuelto un saludo que en realidad era para otra persona?"},{key:"pushed-pull-door",en:"Have you pushed a door that should have been pulled this week?",et:"Kas oled sel n\xE4dalal l\xFCkanud ust, mida oleks pidanud t\xF5mbama?",es:"\xBFEsta semana empujaste una puerta que hab\xEDa que abrir hacia ti?"},{key:"wrong-car",en:"Have you ever tried to get into a car that wasn't yours by mistake?",et:"Kas oled kunagi kogemata proovinud istuda v\xF5\xF5rasse autosse?",es:"\xBFAlguna vez intentaste subirte por error a un auto que no era el tuyo?"},{key:"hold-breath-minute",en:"Can you hold your breath for a full minute?",et:"Kas suudad terve minuti hinge kinni hoida?",es:"\xBFPuedes aguantar la respiraci\xF3n un minuto entero?"},{key:"cartwheel",en:"Can you do a cartwheel?",et:"Kas oskad hundiratast teha?",es:"\xBFSabes hacer la rueda de carro?"},{key:"snap-both-hands",en:"Can you snap your fingers on both hands?",et:"Kas oskad m\xF5lema k\xE4ega s\xF5rmi nipsutada?",es:"\xBFPuedes chasquear los dedos con ambas manos?"},{key:"juggle-three",en:"Can you juggle three balls?",et:"Kas oskad kolme palliga \u017Eongleerida?",es:"\xBFSabes hacer malabares con tres pelotas?"},{key:"rubiks-cube",en:"Have you ever solved a Rubik's Cube?",et:"Kas oled kunagi Rubiku kuubiku kokku pannud?",es:"\xBFAlguna vez has resuelto un cubo de Rubik?"},{key:"count-three-languages",en:"Can you count to ten in three languages?",et:"Kas oskad kolmes keeles k\xFCmneni lugeda?",es:"\xBFSabes contar hasta diez en tres idiomas?"},{key:"number-by-heart",en:"Do you know a family member's phone number by heart?",et:"Kas tead m\xF5ne pereliikme telefoninumbrit peast?",es:"\xBFTe sabes de memoria el n\xFAmero de tel\xE9fono de alg\xFAn familiar?"},{key:"handwritten-letter",en:"Have you written a letter by hand in the past year?",et:"Kas oled viimase aasta jooksul kellelegi k\xE4sitsi kirja kirjutanud?",es:"\xBFHas escrito una carta a mano en el \xFAltimo a\xF1o?"},{key:"paper-map",en:"Have you used a paper map in the past year?",et:"Kas oled viimase aasta jooksul paberkaarti kasutanud?",es:"\xBFHas usado un mapa de papel en el \xFAltimo a\xF1o?"},{key:"planted-tree",en:"Have you ever planted a tree?",et:"Kas oled kunagi puu istutanud?",es:"\xBFAlguna vez has plantado un \xE1rbol?"},{key:"watched-sunrise",en:"Have you watched a sunrise in the past month?",et:"Kas oled viimase kuu jooksul p\xE4ikeset\xF5usu vaadanud?",es:"\xBFHas visto un amanecer en el \xFAltimo mes?"},{key:"climbed-tree",en:"Have you climbed a tree in the past year?",et:"Kas oled viimase aasta jooksul puu otsa roninud?",es:"\xBFTe has subido a un \xE1rbol en el \xFAltimo a\xF1o?"},{key:"sandwich-diagonal",en:"Do you cut your sandwiches diagonally?",et:"Kas l\xF5ikad v\xF5ileiva diagonaalis pooleks?",es:"\xBFCortas los s\xE1ndwiches en diagonal?"},{key:"fries-in-ice-cream",en:"Have you ever dipped fries in ice cream?",et:"Kas oled kunagi friikartuleid j\xE4\xE4tisesse kastnud?",es:"\xBFAlguna vez has mojado papas fritas en helado?"},{key:"banana-bottom",en:"Do you peel bananas from the bottom end, not the stem?",et:"Kas koorid banaani alumisest otsast, mitte varre poolt?",es:"\xBFPelas la banana desde la punta de abajo y no desde el tallo?"},{key:"hot-sauce",en:"Do you put hot sauce on most of your meals?",et:"Kas paned enamikule toitudele tulist kastet?",es:"\xBFLe pones salsa picante a la mayor\xEDa de tus comidas?"},{key:"coffee-daily",en:"Do you drink coffee every day?",et:"Kas jood iga p\xE4ev kohvi?",es:"\xBFTomas caf\xE9 todos los d\xEDas?"},{key:"cooked-from-scratch",en:"Have you cooked a meal from scratch this week?",et:"Kas oled sel n\xE4dalal ise nullist s\xFC\xFCa teinud?",es:"\xBFHas cocinado algo desde cero esta semana?"},{key:"chocolate-fridge",en:"Do you keep chocolate in the fridge?",et:"Kas hoiad \u0161okolaadi k\xFClmkapis?",es:"\xBFGuardas el chocolate en el refrigerador?"},{key:"cereal-for-dinner",en:"Have you ever eaten cereal for dinner?",et:"Kas oled kunagi \xF5htus\xF6\xF6giks hommikuhelbeid s\xF6\xF6nud?",es:"\xBFAlguna vez has cenado cereal?"},{key:"five-second-rule",en:"Would you eat food that was on the floor for less than five seconds?",et:"Kas s\xF6\xF6ksid toitu, mis oli p\xF5randal v\xE4hem kui viis sekundit?",es:"\xBFTe comer\xEDas algo que estuvo en el suelo menos de cinco segundos?"},{key:"chopsticks",en:"Have you ever eaten with chopsticks?",et:"Kas oled kunagi s\xF6\xF6gipulkadega s\xF6\xF6nud?",es:"\xBFAlguna vez has comido con palillos chinos?"},{key:"sniff-books",en:"Do you sniff new books?",et:"Kas nuusutad uusi raamatuid?",es:"\xBFHueles los libros nuevos?"},{key:"dog-ear-pages",en:"Do you fold page corners instead of using a bookmark?",et:"Kas murrad j\xE4rjehoidja asemel lehe nurga kinni?",es:"\xBFDoblas la esquina de las p\xE1ginas en lugar de usar un separador?"},{key:"spoilers",en:"Do you read spoilers before finishing a series?",et:"Kas loed spoilereid enne, kui oled sarja l\xF5puni vaadanud?",es:"\xBFLees spoilers antes de terminar una serie?"},{key:"subtitles-own-language",en:"Do you watch shows in your own language with subtitles on?",et:"Kas vaatad emakeelseid saateid subtiitritega?",es:"\xBFVes series en tu propio idioma con subt\xEDtulos?"},{key:"song-ten-times",en:"Have you listened to the same song more than ten times in one day?",et:"Kas oled kuulanud sama laulu \xFChe p\xE4eva jooksul \xFCle k\xFCmne korra?",es:"\xBFAlguna vez has escuchado la misma canci\xF3n m\xE1s de diez veces en un d\xEDa?"},{key:"karaoke-strangers",en:"Have you ever sung karaoke in front of strangers?",et:"Kas oled kunagi v\xF5\xF5raste ees karaoket laulnud?",es:"\xBFAlguna vez has cantado karaoke delante de desconocidos?"},{key:"play-instrument",en:"Can you play at least one song on a musical instrument?",et:"Kas oskad m\xF5nel pillil v\xE4hemalt \xFChte lugu m\xE4ngida?",es:"\xBFSabes tocar al menos una canci\xF3n con alg\xFAn instrumento?"},{key:"whistle-tune",en:"Can you whistle a tune?",et:"Kas oskad viisi vilistada?",es:"\xBFSabes silbar una melod\xEDa?"},{key:"thousand-photos",en:"Do you have more than a thousand photos on your phone?",et:"Kas su telefonis on \xFCle tuhande foto?",es:"\xBFTienes m\xE1s de mil fotos en el tel\xE9fono?"},{key:"app-folders",en:"Do you keep your phone apps in folders?",et:"Kas hoiad telefoni \xE4ppe kaustades?",es:"\xBFOrganizas las apps de tu tel\xE9fono en carpetas?"},{key:"dark-mode",en:"Is your phone in dark mode?",et:"Kas su telefon on tumedas re\u017Eiimis?",es:"\xBFTienes el tel\xE9fono en modo oscuro?"},{key:"battery-below-half",en:"Is your phone battery below half right now?",et:"Kas su telefoni aku on praegu alla poole?",es:"\xBFTu tel\xE9fono tiene ahora menos de la mitad de bater\xEDa?"},{key:"phone-on-silent",en:"Is your phone on silent right now?",et:"Kas su telefon on praegu h\xE4\xE4letu peal?",es:"\xBFTienes el tel\xE9fono en silencio ahora mismo?"},{key:"forgot-password",en:"Have you clicked \u201CForgot password\u201D this month?",et:"Kas oled sel kuul vajutanud \u201EUnustasin parooli\u201C?",es:"\xBFHas pulsado \xABOlvid\xE9 mi contrase\xF1a\xBB este mes?"},{key:"period-in-texts",en:"Do you end your text messages with a full stop?",et:"Kas l\xF5petad oma s\xF5numid punktiga?",es:"\xBFTerminas tus mensajes de texto con punto?"},{key:"voice-messages",en:"Do you send voice messages more often than you make calls?",et:"Kas saadad h\xE4\xE4ls\xF5numeid sagedamini, kui helistad?",es:"\xBFEnv\xEDas mensajes de voz m\xE1s a menudo de lo que haces llamadas?"},{key:"multiple-alarms",en:"Do you set more than one alarm to wake up?",et:"Kas paned \xE4rkamiseks rohkem kui \xFChe \xE4ratuse?",es:"\xBFPones m\xE1s de una alarma para despertarte?"},{key:"weekly-nap",en:"Do you take a nap during the day at least once a week?",et:"Kas teed p\xE4eval uinaku v\xE4hemalt korra n\xE4dalas?",es:"\xBFDuermes la siesta al menos una vez por semana?"},{key:"same-side-of-bed",en:"Do you always sleep on the same side of the bed?",et:"Kas magad alati voodi samal poolel?",es:"\xBFDuermes siempre del mismo lado de la cama?"},{key:"background-noise",en:"Do you need some background noise to fall asleep?",et:"Kas vajad uinumiseks taustam\xFCra?",es:"\xBFNecesitas algo de ruido de fondo para dormirte?"},{key:"left-shoe-first",en:"Do you always put on your left shoe first?",et:"Kas paned alati esimesena jalga vasaku kinga?",es:"\xBFSiempre te pones primero el zapato izquierdo?"},{key:"walked-into-glass",en:"Have you ever walked into a glass door or window?",et:"Kas oled kunagi vastu klaasust ust v\xF5i akent k\xF5ndinud?",es:"\xBFAlguna vez te has chocado con una puerta o ventana de vidrio?"},{key:"money-in-pocket",en:"Have you found money in an old jacket pocket this year?",et:"Kas oled sel aastal vana jope taskust raha leidnud?",es:"\xBFEste a\xF1o encontraste dinero en el bolsillo de una chaqueta vieja?"},{key:"kept-diary",en:"Have you ever kept a diary for more than a month?",et:"Kas oled kunagi kauem kui kuu aega p\xE4evikut pidanud?",es:"\xBFAlguna vez has llevado un diario durante m\xE1s de un mes?"},{key:"forgot-birthday",en:"Have you ever forgotten a close friend's birthday?",et:"Kas oled kunagi unustanud l\xE4hedase s\xF5bra s\xFCnnip\xE4eva?",es:"\xBFAlguna vez has olvidado el cumplea\xF1os de alguien muy cercano?"},{key:"childhood-toy",en:"Do you still have a toy from your childhood?",et:"Kas sul on m\xF5ni lapsep\xF5lve m\xE4nguasi veel alles?",es:"\xBFTodav\xEDa conservas alg\xFAn juguete de tu infancia?"},{key:"no-hands-bike",en:"Can you ride a bike without holding the handlebars?",et:"Kas oskad jalgrattaga s\xF5ita ilma k\xE4si lenksul hoidmata?",es:"\xBFPuedes ir en bicicleta sin agarrarte con las manos?"},{key:"laughed-to-tears",en:"Have you laughed so hard you cried this month?",et:"Kas oled sel kuul nii k\xF5vasti naernud, et pisarad tulid silma?",es:"\xBFEste mes te has re\xEDdo tanto que te salieron l\xE1grimas?"},{key:"dessert-first",en:"Have you ever eaten dessert before the main course?",et:"Kas oled kunagi s\xF6\xF6nud magustoidu enne pearoogi?",es:"\xBFAlguna vez te has comido el postre antes del plato principal?"},{key:"toothpaste-middle",en:"Do you squeeze the toothpaste tube from the middle?",et:"Kas pigistad hambapastat tuubi keskelt?",es:"\xBFAprietas el tubo de pasta de dientes por el medio?"},{key:"brush-in-shower",en:"Do you ever brush your teeth in the shower?",et:"Kas pesed vahel du\u0161i all hambaid?",es:"\xBFAlguna vez te lavas los dientes en la ducha?"},{key:"daily-weather",en:"Do you check the weather forecast every day?",et:"Kas vaatad iga p\xE4ev ilmateadet?",es:"\xBFMiras el pron\xF3stico del tiempo todos los d\xEDas?"},{key:"lost-umbrella",en:"Have you lost an umbrella in the past year?",et:"Kas oled viimase aasta jooksul m\xF5ne vihmavarju kaotanud?",es:"\xBFHas perdido un paraguas en el \xFAltimo a\xF1o?"},{key:"hum-while-working",en:"Do you hum while you work or study?",et:"Kas \xFCmised t\xF6\xF6tades v\xF5i \xF5ppides?",es:"\xBFTarareas mientras trabajas o estudias?"},{key:"slept-in-cinema",en:"Have you ever fallen asleep in a cinema?",et:"Kas oled kunagi kinos magama j\xE4\xE4nud?",es:"\xBFAlguna vez te has dormido en el cine?"},{key:"open-fridge-aimlessly",en:"Do you open the fridge without looking for anything in particular?",et:"Kas avad k\xFClmkapi, ilma et sul midagi kindlat vaja oleks?",es:"\xBFAbres el refrigerador sin buscar nada en concreto?"},{key:"alarm-clock",en:"Do you wake up with an alarm clock that isn't your phone?",et:"Kas \xE4rkad \xE4ratuskella peale, mis pole sinu telefon?",es:"\xBFTe despiertas con un despertador que no es tu tel\xE9fono?"}]};var Q=class extends Error{constructor(a,o){super(`API error ${a}`);ut(this,"status",a);ut(this,"body",o)}get offline(){return this.status===0}},Is=["raw-potato","sing-in-shower","milk-before-cereal","phone-in-water","last-page-first","sleep-in-socks","talk-to-plant","pineapple-pizza","snooze-once","remember-dreams","finger-whistle","cried-at-movie","shooting-star","pizza-crust","ketchup-fridge","danced-alone"],qa=Is.map(e=>Ha.questions.find(t=>t.key===e)),Et=8;function Ms(e){let t=e>>>0;return()=>(t=t*1664525+1013904223>>>0)/2**32}function ae(){return wt(new Date)}function js(){return Ye(ae(),-Et)}function Ga(e){return Ye(js(),e-1)}function _a(e){return qa[(e-1)%qa.length]}function $a(e){let t=Ms(e*7919+17),a=600+Math.floor(t()*9e3),o=Math.round((12+t()*76)*100)/100,s=ga(o),n=new Array(20).fill(0),r=150+Math.floor(t()*900);for(let u=0;u<r;u++){let f=Math.max(0,Math.min(100,Math.round(s+(t()+t()+t()-1.5)*34)));n[ze(f)]++}let i=0;for(let u=0;u<20;u++)Math.abs(u*5+2-s)<=3&&(i+=n[u]);let d=[.55,.25,.2],c=["en","et","es"].map((u,f)=>({locale:u,total:Math.round(a*d[f]),yesPct:Math.max(0,Math.min(100,Math.round((o+(t()-.5)*12)*10)/10))}));return{total:a,yesPct:o,answer:s,hist:n,crowd:r,within3:i,perLocale:c}}var Te={get(e,t){try{let a=localStorage.getItem("gtc-demo:"+e);return a?JSON.parse(a):t}catch{return t}},set(e,t){try{localStorage.setItem("gtc-demo:"+e,JSON.stringify(t))}catch{}}};function Ze(e){let t=$a(e),a=Te.get(`g:${e}`,[]),o=fa(a,t.answer),s=a.map(r=>ha(r,t.answer)),n=null;if(o.finished){let r=a[a.length-1],i=[...t.hist];i[ze(r)]++,n={yesPct:t.yesPct,answer:t.answer,total:t.total,seeded:!1,sourceUrl:null,histogram:i,finishedCount:t.crowd+1,within3Count:t.within3+((o.finalError??99)<=3?1:0),perLocale:t.perLocale,breakdownMin:50}}return{guesses:s,finished:o.finished,solvedIn:o.solvedIn,finalError:o.finalError,result:n}}var V=e=>new Promise(t=>setTimeout(()=>t(e),120)),Tt=(e,t)=>_a(e)[t]??_a(e).en,Ne=Et,Z={async today(e){let t=Et+1,a=Te.get(`v:${ae()}`,null);return V({today:ae(),closesAt:Ye(ae(),1)+"T00:00:00Z",question:{id:t,number:t,date:ae(),text:Tt(t,e)},myVote:a})},async puzzle(e,t,a){let o=a??Ne;return o<1||o>Ne?V({status:"not_found",today:ae()}):V({status:"ok",today:ae(),mode:o===Ne?"daily":"archive",puzzle:{id:o,number:o,date:Ga(o),text:Tt(o,e)},dailyNumber:Ne,prevDailyNumber:Ne-1,fallback:null,game:Ze(o)})},async guess(e,t,a){let o=e,s=Ze(o);if(s.finished)return V({status:"finished",game:s});let n=Te.get(`g:${o}`,[]);return n.includes(a)?V({status:"repeated",game:s}):(n.length<3&&Te.set(`g:${o}`,[...n,a]),V({status:"ok",game:Ze(o)}))},async vote(e,t,a){return Te.get(`v:${ae()}`,null)!==null?V({status:"duplicate"}):(Te.set(`v:${ae()}`,a),V({status:"ok"}))},async archive(e){let t=[];for(let a=Ne-1;a>=1;a--){let o=$a(a),s=Ze(a);t.push({number:a,date:Ga(a),text:Tt(a,e),yesPct:o.yesPct,answer:o.answer,total:o.total,played:s.finished,solvedIn:s.solvedIn??null,finalError:s.finalError??null})}return V({items:t,hasMore:!1})},async suggest(e){let t=e.trim();return t.length<8?V({status:"error",error:"too_short"}):t.length>120?V({status:"error",error:"too_long"}):V({status:"ok"})}};function Va(){return"guessthecrowd.com"}var et=l(p());async function Ds(e){try{return await navigator.clipboard.writeText(e),!0}catch{try{let t=document.createElement("textarea");t.value=e,t.setAttribute("readonly",""),t.style.position="fixed",t.style.opacity="0",document.body.appendChild(t),t.select();let a=document.execCommand("copy");return t.remove(),a}catch{return!1}}}function Fa({number:e,solvedIn:t,finalError:a,guesses:o,archive:s}){let{t:n}=h(),r=Qe(),{highContrast:i}=We();return(0,et.jsxs)("button",{type:"button",onClick:async()=>{let c=Ra({title:n("app.name"),number:e,solvedIn:t,finalError:a,guesses:o,host:Va(),highContrast:i,archive:s,archiveLabel:n("result.archiveLabel")});if(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)&&typeof navigator.share=="function")try{await navigator.share({text:c});return}catch(f){if(f.name==="AbortError")return}r(await Ds(c)?n("result.copied"):n("result.copyFailed"))},className:"flex h-14 items-center justify-center gap-2 rounded-full bg-btn px-7 text-lg font-extrabold text-btn-fg hover:opacity-90",children:[n("result.share"),(0,et.jsx)(aa,{size:20})]})}var Ee=l(p());function tt({onZero:e}){let{t,fmt:a}=h(),o=ka(e);return(0,Ee.jsxs)("div",{children:[(0,Ee.jsx)("p",{className:"text-sm font-semibold",children:t("result.nextPuzzle")}),(0,Ee.jsx)("p",{className:"text-3xl font-extrabold leading-tight tnum",role:"timer","aria-live":"off",children:o===null?"\u2013\u2013:\u2013\u2013:\u2013\u2013":pa(o)}),o!==null&&(0,Ee.jsx)("p",{className:"text-xs text-muted",children:t("result.nextAt",{time:a.localTime(Ae(new Date))})})]})}var x=l(p());function Oa({game:e,result:t,number:a,archive:o,animate:s,onNewDay:n}){let{t:r,fmt:i,locale:d}=h(),c=e.solvedIn??null,u=e.finalError??0,f=e.guesses[e.guesses.length-1]?.value??null,g=t.finishedCount>0?t.within3Count/t.finishedCount*100:0,v=k=>s?{animationDelay:`${k}ms`}:void 0,y=s?"anim-fade-up":"";return(0,x.jsxs)("section",{className:"flex flex-col gap-5","aria-labelledby":"result-heading",children:[(0,x.jsx)("h2",{id:"result-heading",className:"text-center text-2xl font-extrabold",children:c?r("result.solved",{count:c}):r("result.notSolved")}),(0,x.jsx)(Pa,{answer:t.answer,guesses:e.guesses,animate:s}),(0,x.jsxs)("div",{className:`text-center ${y}`,style:v(1500),children:[(0,x.jsxs)("p",{className:"text-xl font-bold",children:[r("result.saidYes",{pct:i.percent(Number(t.yesPct),1)}),(0,x.jsxs)("span",{className:"font-normal text-muted",children:[" \xB7 ",r("result.players",{count:t.total})]})]}),(0,x.jsx)("p",{className:"mt-1 text-[15px]",children:u===0?r("result.spotOn"):r("result.off",{count:u})}),(0,x.jsx)("p",{className:"mt-1 text-sm text-muted",children:t.finishedCount>1?r("result.within3",{pct:i.percent(g)}):r("result.firstToFinish")}),t.seeded&&t.sourceUrl&&(0,x.jsxs)("p",{className:"mt-2 text-sm text-muted",children:[r("result.seededNote")," ",(0,x.jsx)("a",{href:t.sourceUrl,target:"_blank",rel:"noopener noreferrer",className:"font-semibold underline underline-offset-2",children:r("result.source")})]})]}),(0,x.jsxs)("div",{className:`rounded-2xl border border-line p-4 ${y}`,style:v(1700),children:[(0,x.jsx)(La,{buckets:t.histogram,answer:t.answer,mine:f}),t.perLocale.length>0&&(0,x.jsxs)("div",{className:"mt-5",children:[(0,x.jsx)("h3",{className:"text-sm font-bold",children:r("result.breakdownTitle")}),(0,x.jsx)("ul",{className:"mt-2 space-y-1.5",children:t.perLocale.map(k=>(0,x.jsxs)("li",{className:"flex items-center gap-3 text-sm",children:[(0,x.jsx)("span",{className:"w-20 shrink-0 truncate",lang:k.locale,children:ve(k.locale)?ce[k.locale]:k.locale}),(0,x.jsx)("span",{className:"relative h-2.5 flex-1 overflow-hidden rounded-full bg-track","aria-hidden":"true",children:(0,x.jsx)("span",{className:"absolute inset-y-0 left-0 rounded-full bg-fg",style:{width:`${k.yesPct}%`}})}),(0,x.jsxs)("span",{className:"w-24 shrink-0 text-right tnum",children:[(0,x.jsx)("b",{children:i.percent(Number(k.yesPct))})," ",(0,x.jsxs)("span",{className:"text-muted",children:["(",i.number(k.total),")"]})]})]},k.locale))}),(0,x.jsx)("p",{className:"mt-2 text-xs text-muted",children:r("result.breakdownNote",{min:t.breakdownMin})})]})]}),(0,x.jsxs)("div",{className:`flex items-center justify-between gap-4 ${y}`,style:v(1900),children:[o?(0,x.jsx)("a",{href:_(d,"/archive"),className:"text-sm font-semibold underline underline-offset-4",children:r("archive.back")}):(0,x.jsx)(tt,{onZero:n}),(0,x.jsx)(Fa,{number:a,solvedIn:c,finalError:u,guesses:e.guesses,archive:o})]})]})}var se=l(j());var st=l(j()),Ba=l(p()),at=null;function As(){return at??(at=new Promise((e,t)=>{let a=document.createElement("script");a.src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit",a.async=!0,a.onload=()=>e(),a.onerror=()=>{at=null,t(new Error("turnstile load failed"))},document.head.appendChild(a)})),at}function Ua({siteKey:e,locale:t,onToken:a,onError:o}){let s=(0,st.useRef)(null);return(0,st.useEffect)(()=>{let n=null,r=!1;return As().then(()=>{r||!s.current||!window.turnstile||(n=window.turnstile.render(s.current,{sitekey:e,language:t,callback:a,"error-callback":o}))}).catch(o),()=>{r=!0,n&&window.turnstile&&window.turnstile.remove(n)}},[e,t,a,o]),(0,Ba.jsx)("div",{ref:s,className:"flex justify-center"})}var C=l(p());function Ct({today:e,compact:t=!1,bare:a=!1,onVoted:o}){let{t:s,locale:n}=h(),r=e.question,[i,d]=(0,se.useState)(e.myVote),[c,u]=(0,se.useState)(null),[f,g]=(0,se.useState)(null),[v,y]=(0,se.useState)(null),k=(0,se.useCallback)(async(U,ue)=>{if(r){u(U),g(null);try{let L=await Z.vote(r.id,pe(),U,n,ue);y(null),L.status==="ok"||L.status==="duplicate"?(d(U),o?.(U)):L.status==="challenge_required"&&L.siteKey?y({siteKey:L.siteKey,answer:U}):L.status==="challenge_failed"?g("challenge_failed"):L.status==="closed"||L.status==="rate_limited"?g(L.status):g("error")}catch(L){g(L instanceof Q&&L.offline?"offline":"error")}finally{u(null)}}},[r,n,o]),I=(0,se.useCallback)(U=>v&&k(v.answer,U),[v,k]),ne=(0,se.useCallback)(()=>g("challenge_failed"),[]),O=a?"":`rounded-2xl bg-surface ${t?"p-4":"p-5"}`,He=a?"sr-only":"text-sm font-bold text-muted";if(!r)return(0,C.jsxs)("section",{className:O,children:[(0,C.jsx)("h2",{className:"font-bold",children:s("vote.title")}),(0,C.jsx)("p",{className:"mt-1 text-muted",children:s("vote.none")})]});if(i!==null)return(0,C.jsxs)("section",{className:O,"aria-live":"polite",children:[(0,C.jsx)("h2",{className:He,children:s("vote.title")}),(0,C.jsx)("p",{className:"mt-1 text-lg font-bold leading-snug balance",children:r.text}),(0,C.jsxs)("p",{className:"mt-3 font-semibold",children:[s("vote.thanks")," ",s("vote.youAnswered",{answer:s(i?"common.yes":"common.no")})]}),(0,C.jsx)("p",{className:"mt-1 text-sm text-muted",children:s("vote.comeBack")})]});let rt={error:s("vote.error"),offline:s("common.offline"),closed:s("vote.closed"),rate_limited:s("vote.rateLimited"),challenge_failed:s("vote.challengeFailed")},Ie="h-14 flex-1 rounded-full border-2 border-fg text-lg font-extrabold transition-colors hover:bg-fg hover:text-bg disabled:opacity-50";return(0,C.jsxs)("section",{className:O,"aria-labelledby":"vote-heading",children:[(0,C.jsx)("h2",{id:"vote-heading",className:He,children:s("vote.title")}),(0,C.jsx)("p",{className:"mt-1 text-2xl font-extrabold leading-tight balance",children:r.text}),(0,C.jsx)("p",{className:"mt-2 text-sm text-muted",children:s("vote.subtitle")}),(0,C.jsxs)("div",{className:"mt-4 flex gap-3",children:[(0,C.jsx)("button",{type:"button",className:Ie,disabled:c!==null,onClick:()=>k(!0),children:s("common.yes")}),(0,C.jsx)("button",{type:"button",className:Ie,disabled:c!==null,onClick:()=>k(!1),children:s("common.no")})]}),v&&(0,C.jsxs)("div",{className:"mt-4",children:[(0,C.jsx)("p",{className:"mb-2 text-sm",children:s("vote.challenge")}),(0,C.jsx)(Ua,{siteKey:v.siteKey,locale:n,onToken:I,onError:ne})]}),f&&(0,C.jsx)("p",{role:"alert",className:"mt-3 text-sm font-semibold",children:rt[f]})]})}var m=l(p());function Ya(e,t){t.finished&&Ft({number:e.puzzle.number,mode:e.mode,prevDaily:e.mode==="daily"?e.prevDailyNumber:null,solvedIn:t.solvedIn??null,finalError:t.finalError??0,guesses:t.guesses,playedAt:new Date().toISOString()})}function ot({number:e}){let{t,fmt:a,locale:o}=h(),s=Qe(),n=e!==void 0,[r,i]=(0,D.useState)({kind:"loading"}),[d,c]=(0,D.useState)(null),[u,f]=(0,D.useState)(50),[g,v]=(0,D.useState)(!1),[y,k]=(0,D.useState)(0),[I,ne]=(0,D.useState)(!1),[O,He]=(0,D.useState)(3),[rt,Ie]=(0,D.useState)(""),U=(0,D.useRef)(!1),ue=(0,D.useCallback)(async()=>{i({kind:"loading"});let w=pe();try{let[P,fe]=await Promise.all([Z.puzzle(o,w,e),n?Promise.resolve(null):Z.today(o,w)]);if(P.status==="launch"){vt({dailyNumber:null,prevDailyNumber:null}),i({kind:"launch",today:fe});return}if(P.status==="not_found"){i({kind:"not_found"});return}vt({dailyNumber:P.dailyNumber,prevDailyNumber:P.prevDailyNumber}),Ya(P,P.game),c(P.game),i({kind:"ok",puzzle:P,today:fe})}catch(P){i({kind:"error",offline:P instanceof Q&&P.offline})}},[o,e,n]);(0,D.useEffect)(()=>{ue()},[ue]);let L=async()=>{if(!(r.kind!=="ok"||!d||d.finished||U.current)){if(d.guesses.some(w=>w.value===u)){k(w=>w+1),s(t("game.repeated",{value:u}));return}U.current=!0,v(!0);try{let w=await Z.guess(r.puzzle.puzzle.id,pe(),u,o);if(w.status==="rate_limited"){s(t("game.rateLimited"));return}if(w.status==="repeated"){k(fe=>fe+1),s(t("game.repeated",{value:u}));return}if(!w.game)throw new Error("no game");He(d.guesses.length),c(w.game);let P=w.game.guesses[w.game.guesses.length-1];if(w.game.finished&&w.game.result){Ya(r.puzzle,w.game),ne(!0);let fe=w.game.solvedIn?t("result.solved",{count:w.game.solvedIn}):t("result.notSolved");Ie(`${Je(t,w.game.guesses.length,P)} \u2014 ${fe} ${t("result.saidYes",{pct:a.percent(w.game.result.answer)})}`)}else P&&Ie(Je(t,w.game.guesses.length,P))}catch(w){s(w instanceof Q&&w.offline?t("common.offline"):t("game.error"))}finally{U.current=!1,v(!1)}}},Me="mx-auto flex w-full max-w-[480px] flex-1 flex-col px-4",rs=(0,m.jsx)("p",{className:"sr-only","aria-live":"assertive","aria-atomic":"true",children:rt});if(r.kind==="loading")return(0,m.jsxs)("div",{className:`${Me} items-center pt-8`,"aria-busy":"true",children:[(0,m.jsx)("span",{className:"sr-only",children:t("common.loading")}),(0,m.jsx)("div",{className:"h-4 w-32 animate-pulse rounded bg-surface"}),(0,m.jsx)("div",{className:"mt-6 h-8 w-full animate-pulse rounded bg-surface"}),(0,m.jsx)("div",{className:"mt-2 h-8 w-3/4 animate-pulse rounded bg-surface"}),(0,m.jsx)("div",{className:"mt-8 grid w-full grid-cols-3 gap-2.5",children:[0,1,2].map(w=>(0,m.jsx)("div",{className:"h-[60px] rounded-xl bg-surface"},w))})]});if(r.kind==="error")return(0,m.jsxs)("div",{className:`${Me} items-center justify-center gap-4 py-12 text-center`,children:[(0,m.jsx)("p",{className:"text-lg font-semibold",children:r.offline?t("common.offline"):t("common.error")}),(0,m.jsx)("button",{type:"button",onClick:ue,className:"h-12 rounded-full bg-btn px-6 font-bold text-btn-fg",children:t("common.retry")})]});if(r.kind==="not_found")return(0,m.jsxs)("div",{className:`${Me} items-center justify-center gap-4 py-12 text-center`,children:[(0,m.jsx)("p",{className:"text-lg font-semibold",children:t("archive.notFound")}),(0,m.jsx)("a",{href:_(o,"/archive"),className:"font-bold underline underline-offset-4",children:t("archive.back")})]});if(r.kind==="launch")return(0,m.jsxs)("div",{className:`${Me} gap-6 py-8`,children:[(0,m.jsxs)("div",{className:"text-center",children:[(0,m.jsx)("h1",{className:"text-3xl font-extrabold leading-tight balance",children:t("launch.title")}),(0,m.jsx)("p",{className:"mt-3 text-[17px] leading-relaxed balance",children:t("launch.body")}),(0,m.jsx)("p",{className:"mt-2 text-muted balance",children:t("launch.cta")})]}),r.today&&(0,m.jsx)(Ct,{today:r.today}),(0,m.jsx)("div",{className:"text-center",children:(0,m.jsx)(tt,{onZero:ue})})]});let{puzzle:K}=r,de=d??K.game,Mt=de.finished?de.result:null;return(0,m.jsxs)("div",{className:`${Me} pb-8 pt-4 [@media(max-height:700px)]:pt-2`,children:[rs,n&&(0,m.jsxs)("div",{className:"mb-2 flex items-center justify-between gap-2 text-sm",children:[(0,m.jsxs)("a",{href:_(o,"/archive"),className:"-ml-1 flex items-center gap-0.5 font-semibold hover:underline",children:[(0,m.jsx)(na,{size:18}),t("nav.archive")]}),(0,m.jsx)("span",{className:"text-right text-xs text-muted",children:t("puzzle.archiveBadge")})]}),K.fallback&&(0,m.jsx)("p",{className:"mb-3 rounded-xl bg-surface px-4 py-3 text-sm leading-snug",children:K.fallback.reason==="too_few_votes"?t("fallback.tooFewVotes",{votes:K.fallback.votes,needed:K.fallback.needed}):t("fallback.noQuestion")}),(0,m.jsxs)("header",{className:"text-center",children:[(0,m.jsxs)("p",{className:"text-sm font-semibold text-muted tnum",children:[t("puzzle.number",{number:K.puzzle.number}),(0,m.jsx)("span",{"aria-hidden":"true",children:" \xB7 "}),(0,m.jsx)("time",{dateTime:K.puzzle.date,children:a.date(K.puzzle.date)})]}),(0,m.jsx)("p",{className:"mt-3 text-[15px] text-muted [@media(max-height:700px)]:mt-1",children:n||K.mode==="archive"||K.fallback?t("puzzle.kickerArchive",{date:a.date(K.puzzle.date,"long")}):t("puzzle.kickerDaily")}),(0,m.jsx)("h1",{className:"mt-1 text-[clamp(24px,6.6vw,32px)] font-extrabold leading-[1.15] tracking-tight balance",children:K.puzzle.text}),!de.finished&&(0,m.jsx)("p",{className:"mt-2 font-semibold",children:t("puzzle.prompt")})]}),(0,m.jsx)("div",{className:"mt-5 [@media(max-height:700px)]:mt-3",children:(0,m.jsx)(ja,{guesses:de.guesses,animateFrom:O})}),de.finished?Mt&&(0,m.jsxs)("div",{className:"mt-6 flex flex-col gap-6",children:[(0,m.jsx)(Oa,{game:de,result:Mt,number:K.puzzle.number,archive:K.mode==="archive",animate:I,onNewDay:ue}),!n&&r.today&&(0,m.jsx)("div",{className:I?"anim-fade-up":"",style:I?{animationDelay:"2100ms"}:void 0,children:(0,m.jsx)(zs,{today:r.today})})]}):(0,m.jsx)("div",{className:"mt-auto pt-5 sm:mt-10 sm:pt-0 [@media(max-height:700px)]:pt-3",children:(0,m.jsx)(Aa,{value:u,onChange:f,onSubmit:L,attemptsLeft:3-de.guesses.length,busy:g,shakeKey:y})})]})}function zs({today:e}){let{t}=h(),[a,o]=(0,D.useState)(!1),[s,n]=(0,D.useState)(e.myVote);return e.question?s!==null&&!a?(0,m.jsxs)("p",{className:"rounded-2xl bg-surface p-4 text-center text-sm leading-snug",children:[(0,m.jsx)("b",{children:t("vote.youAnswered",{answer:t(s?"common.yes":"common.no")})})," ",(0,m.jsx)("span",{className:"text-muted",children:t("vote.comeBack")})]}):(0,m.jsxs)(m.Fragment,{children:[(0,m.jsx)("button",{type:"button",onClick:()=>o(!0),className:"h-14 w-full rounded-full border-2 border-fg text-lg font-extrabold transition-colors hover:bg-fg hover:text-bg",children:t("vote.open")}),(0,m.jsxs)(le,{open:a,onClose:()=>o(!1),title:t("vote.title"),children:[(0,m.jsx)(Ct,{today:{...e,myVote:s},bare:!0,onVoted:n}),s!==null&&(0,m.jsx)("button",{type:"button",onClick:()=>o(!1),className:"mt-5 h-12 w-full rounded-full bg-btn font-bold text-btn-fg hover:opacity-90",children:t("nav.close")})]})]}):(0,m.jsx)("p",{className:"text-center text-sm text-muted",children:t("vote.none")})}var ee=l(j());var S=l(p());function Wa(){let{t:e,fmt:t,locale:a}=h(),[o,s]=(0,ee.useState)(null),[n,r]=(0,ee.useState)(!1),[i,d]=(0,ee.useState)(null),[c,u]=(0,ee.useState)(!1),[f,g]=(0,ee.useState)(new Set),v=(0,ee.useCallback)(async y=>{d(null);try{let k=await Z.archive(a,pe(),y);s(I=>y&&I?[...I,...k.items]:k.items),r(k.hasMore)}catch(k){d(k instanceof Q&&k.offline?"offline":"error")}},[a]);return(0,ee.useEffect)(()=>{v()},[v]),(0,S.jsxs)("div",{className:"mx-auto w-full max-w-[480px] px-4 py-6",children:[(0,S.jsx)("h1",{className:"text-3xl font-extrabold tracking-tight",children:e("archive.title")}),(0,S.jsx)("p",{className:"mt-2 text-muted",children:e("archive.intro")}),i&&(0,S.jsxs)("div",{className:"mt-6 flex items-center justify-between gap-4 rounded-xl bg-surface p-4",children:[(0,S.jsx)("p",{className:"font-semibold",children:e(i==="offline"?"common.offline":"common.error")}),(0,S.jsx)("button",{type:"button",onClick:()=>v(),className:"rounded-full bg-btn px-4 py-2 font-bold text-btn-fg",children:e("common.retry")})]}),!o&&!i&&(0,S.jsxs)("div",{className:"mt-6 space-y-2","aria-busy":"true",children:[(0,S.jsx)("span",{className:"sr-only",children:e("common.loading")}),[0,1,2,3].map(y=>(0,S.jsx)("div",{className:"h-20 animate-pulse rounded-xl bg-surface"},y))]}),o&&o.length===0&&(0,S.jsx)("p",{className:"mt-8 rounded-xl bg-surface p-5 text-center",children:e("archive.empty")}),o&&o.length>0&&(0,S.jsx)("ul",{className:"mt-6 divide-y divide-line border-y border-line",children:o.map(y=>{let k=y.played||f.has(y.number);return(0,S.jsxs)("li",{className:"py-4",children:[(0,S.jsxs)("div",{className:"flex items-baseline justify-between gap-3 text-sm text-muted tnum",children:[(0,S.jsxs)("span",{children:[e("puzzle.number",{number:y.number})," \xB7 ",(0,S.jsx)("time",{dateTime:y.date,children:t.date(y.date)})]}),y.played&&(0,S.jsx)("span",{className:"font-bold text-fg",children:e("archive.score",{score:y.solvedIn??"X"})})]}),(0,S.jsx)("p",{className:"mt-1 text-lg font-bold leading-snug balance",children:y.text}),(0,S.jsxs)("div",{className:"mt-2 flex items-center justify-between gap-3",children:[k?(0,S.jsxs)("p",{className:"text-[15px]",children:[(0,S.jsx)("b",{className:"tnum",children:e("archive.saidYes",{pct:t.percent(Number(y.yesPct),1)})})," ",(0,S.jsxs)("span",{className:"text-muted",children:["\xB7 ",e("result.players",{count:y.total})]})]}):(0,S.jsx)("button",{type:"button",onClick:()=>g(I=>new Set(I).add(y.number)),className:"text-sm font-semibold text-muted underline underline-offset-4 hover:text-fg",children:e("archive.reveal")}),!y.played&&(0,S.jsx)("a",{href:_(a,`/archive/${y.number}`),className:"shrink-0 rounded-full bg-btn px-5 py-2 font-bold text-btn-fg hover:opacity-90",children:e("archive.play")})]})]},y.number)})}),n&&o&&(0,S.jsx)("button",{type:"button",disabled:c,onClick:async()=>{u(!0),await v(o[o.length-1].number),u(!1)},className:"mt-6 h-12 w-full rounded-full border-2 border-fg font-bold disabled:opacity-50",children:e(c?"common.loading":"archive.loadMore")})]})}var F=l(j());var Ps=["fuck","fucking","fucker","shit","bitch","cunt","pussy","asshole","bastard","slut","whore","nigger","nigga","faggot","retard","porn","mierda","puta","puto","putas","putos","cabron","cabrona","pendejo","pendeja","gilipollas","verga","chinga","chingada","maricon","culero","perse","persse","t\xFCra","vittu","raisk","lits","munn","pede","nikkuma","sitt"],Qa=new Set(Ps.map(Ja));function Ja(e){return e.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[0@]/g,"o").replace(/[1!|]/g,"i").replace(/3/g,"e").replace(/4/g,"a").replace(/[5$]/g,"s").replace(/7/g,"t")}function It(e){let t=Ja(e).split(/[^a-z]+/).filter(Boolean);if(t.some(o=>Qa.has(o)))return!0;let a=t.filter(o=>o.length===1).join("");return a.length>=4&&[...Qa].some(o=>o.length>=4&&a.includes(o))}var T=l(p()),Ls=8,Re=120;function Xa(){let{t:e,locale:t}=h(),[a,o]=(0,F.useState)(""),[s,n]=(0,F.useState)(""),[r,i]=(0,F.useState)(""),[d,c]=(0,F.useState)("idle"),[u,f]=(0,F.useState)(null),g={text:(0,F.useId)(),hint:(0,F.useId)(),nick:(0,F.useId)(),err:(0,F.useId)(),hp:(0,F.useId)()},v=I=>{switch(I){case"too_short":return e("suggest.errors.tooShort");case"too_long":return e("suggest.errors.tooLong",{max:Re});case"profanity":return e("suggest.errors.profanity");case"rate_limited":return e("suggest.errors.rateLimited");case"offline":return e("common.offline");default:return e("suggest.errors.generic")}},y=async I=>{I.preventDefault();let ne=a.replace(/\s+/g," ").trim();if(ne.length<Ls)return f("too_short");if(ne.length>Re)return f("too_long");if(It(ne)||It(s))return f("profanity");f(null),c("sending");try{let O=await Z.suggest(ne,s,t,r);if(O.status==="ok"){c("done");return}f(O.error??"generic")}catch(O){f(O instanceof Q&&O.offline?"offline":"generic")}c("idle")};if(d==="done")return(0,T.jsxs)("div",{className:"mx-auto w-full max-w-[480px] px-4 py-10 text-center","aria-live":"polite",children:[(0,T.jsx)("h1",{className:"text-2xl font-extrabold",children:e("suggest.success")}),(0,T.jsx)("button",{type:"button",onClick:()=>{o(""),c("idle")},className:"mt-6 h-12 rounded-full border-2 border-fg px-6 font-bold",children:e("suggest.another")})]});let k="w-full rounded-xl border-2 border-line bg-bg px-4 py-3 text-[17px] focus:border-fg focus:outline-none";return(0,T.jsxs)("div",{className:"mx-auto w-full max-w-[480px] px-4 py-6",children:[(0,T.jsx)("h1",{className:"text-3xl font-extrabold tracking-tight",children:e("suggest.title")}),(0,T.jsx)("p",{className:"mt-2 text-muted",children:e("suggest.intro")}),(0,T.jsxs)("form",{onSubmit:y,className:"mt-6 space-y-5",noValidate:!0,children:[(0,T.jsxs)("div",{children:[(0,T.jsxs)("div",{className:"flex items-baseline justify-between",children:[(0,T.jsx)("label",{htmlFor:g.text,className:"font-bold",children:e("suggest.label")}),(0,T.jsx)("span",{className:`text-sm tnum ${a.length>Re?"font-bold":"text-muted"}`,"aria-hidden":"true",children:e("suggest.counter",{count:a.length,max:Re})})]}),(0,T.jsx)("textarea",{id:g.text,value:a,onChange:I=>o(I.target.value),rows:3,maxLength:Re+20,placeholder:e("suggest.placeholder"),"aria-describedby":`${g.hint} ${u?g.err:""}`,"aria-invalid":u==="too_short"||u==="too_long"||u==="profanity",className:`${k} mt-1.5 resize-none`}),(0,T.jsx)("p",{id:g.hint,className:"mt-1.5 text-sm text-muted",children:e("suggest.hint")})]}),(0,T.jsxs)("div",{children:[(0,T.jsx)("label",{htmlFor:g.nick,className:"font-bold",children:e("suggest.nickname")}),(0,T.jsx)("input",{id:g.nick,value:s,onChange:I=>n(I.target.value),maxLength:30,autoComplete:"nickname",className:`${k} mt-1.5`})]}),(0,T.jsxs)("div",{"aria-hidden":"true",className:"absolute -left-[9999px] h-px w-px overflow-hidden",children:[(0,T.jsx)("label",{htmlFor:g.hp,children:e("suggest.honeypot")}),(0,T.jsx)("input",{id:g.hp,tabIndex:-1,autoComplete:"off",value:r,onChange:I=>i(I.target.value),name:"website"})]}),u&&(0,T.jsx)("p",{id:g.err,role:"alert",className:"rounded-xl bg-surface px-4 py-3 font-semibold",children:v(u)}),(0,T.jsx)("button",{type:"submit",disabled:d==="sending",className:"h-14 w-full rounded-full bg-btn text-lg font-extrabold text-btn-fg hover:opacity-90 disabled:opacity-60",children:e(d==="sending"?"suggest.sending":"suggest.submit")})]})]})}var nt=l(j());var oe=l(p()),Ks="2026-10-18";function Za({email:e}){let{t,fmt:a}=h(),[o,s]=(0,nt.useState)(void 0);return(0,nt.useEffect)(()=>s(Vt()),[]),(0,oe.jsxs)("article",{className:"mx-auto w-full max-w-[560px] px-4 py-6",children:[(0,oe.jsx)("h1",{className:"text-3xl font-extrabold tracking-tight",children:t("privacy.title")}),(0,oe.jsx)("p",{className:"mt-1 text-sm text-muted",children:t("privacy.updated",{date:a.date(Ks,"long")})}),(0,oe.jsx)("p",{className:"mt-5 text-lg leading-relaxed",children:t("privacy.intro")}),(0,oe.jsx)("ul",{className:"mt-5 space-y-4 text-[16px] leading-relaxed",children:t.list("privacy.sections").map((n,r)=>(0,oe.jsx)("li",{className:"border-l-4 border-line pl-4",children:n.replace("{email}",e)},r))}),o!==void 0&&(0,oe.jsx)("p",{className:"mt-6 rounded-xl bg-surface p-4 text-sm break-all",children:o?t("privacy.playerId",{id:o}):t("privacy.noPlayerId")})]})}var es={meta:{title:"Guess the Crowd \u2013 the daily world poll game",description:"One yes/no question for the whole world every day. Guess what percent of players said yes, in three tries.",archiveTitle:"Archive \u2013 Guess the Crowd",suggestTitle:"Suggest a question \u2013 Guess the Crowd",privacyTitle:"Privacy \u2013 Guess the Crowd",adminTitle:"Admin \u2013 Guess the Crowd"},app:{name:"Guess the Crowd",logo:"GUESS THE CROWD"},nav:{help:"How to play",stats:"Statistics",settings:"Settings",language:"Language",archive:"Archive",suggest:"Suggest a question",privacy:"Privacy",close:"Close",backToGame:"Back to today\u2019s game",home:"Home"},langSuggest:{text:"This game is also available in {language}.",switch:"Switch",dismiss:"No thanks"},common:{loading:"Loading\u2026",error:"Something went wrong.",offline:"You seem to be offline. Check your connection.",retry:"Try again",yes:"Yes",no:"No"},puzzle:{number:"Puzzle #{number}",kickerDaily:"Yesterday the world answered:",kickerArchive:"On {date} the world answered:",prompt:"What % said yes?",archiveBadge:"Archive puzzle \xB7 doesn\u2019t affect your streak"},game:{guess:"Guess",decrease:"Decrease by 1",increase:"Increase by 1",sliderLabel:"Your guess: percent of players who said yes",attemptsLeft:{one:"{count} guess left",other:"{count} guesses left"},repeated:"You already guessed {value}.",sending:"Checking\u2026",tileLabel:"Guess {n}: {value} percent, {verdict}",tileEmpty:"Guess {n}: not used yet",verdict:{correct:"correct!",close:"close, the answer is {direction}",miss:"far off, the answer is {direction}"},direction:{up:"higher",down:"lower"},higher:"Higher",lower:"Lower",error:"Your guess didn\u2019t go through. Try again.",rateLimited:"Too many requests from your network. Wait a moment and try again."},fallback:{tooFewVotes:"Yesterday\u2019s question only got {votes} of the {needed} answers needed, so here\u2019s the most recent puzzle with enough players.",noQuestion:"There was no question yesterday, so here\u2019s the most recent puzzle."},launch:{title:"Welcome to day one!",body:"Every day the whole world answers one yes/no question. The next day, you guess what percent said yes.",cta:"Answer today\u2019s question to get things started \u2014 the first puzzle opens tomorrow."},result:{solved:{one:"Solved in {count} guess!",other:"Solved in {count} guesses!"},notSolved:"Not this time!",saidYes:"{pct} said yes",players:{one:"{count} player",other:"{count} players"},spotOn:"Spot on \u2014 exactly right!",off:{one:"You were {count} point off.",other:"You were {count} points off."},yourGuesses:"Your guesses",realAnswer:"Real answer",within3:"{pct} of players guessed within \xB13.",firstToFinish:"You\u2019re the first player to finish this puzzle.",histogramTitle:"Everyone\u2019s final guesses",histogramLabel:"{count} players guessed between {from} and {to}",breakdownTitle:"Said yes, by language",breakdownNote:"Shown for languages with at least {min} votes.",source:"Source of this result",seededNote:"This first puzzle uses a published survey.",share:"Share",copied:"Copied to clipboard!",copyFailed:"Couldn\u2019t copy. Try again.",nextPuzzle:"Next puzzle in",nextAt:"at {time} your time",archiveLabel:"archive"},vote:{title:"Today\u2019s question",subtitle:"Answer honestly. Tomorrow, everyone guesses how the world answered.",thanks:"Thanks \u2014 your answer is in!",youAnswered:"You answered \u201C{answer}\u201D.",comeBack:"Results are revealed tomorrow. Come back to play!",none:"No question today. Check back tomorrow!",error:"Your answer didn\u2019t go through. Try again.",closed:"Voting on this question has closed.",rateLimited:"Too many answers from your network. Try again later.",challenge:"Quick check: please confirm you\u2019re human.",challengeFailed:"The check didn\u2019t work. Try again.",open:"Answer today\u2019s question"},help:{title:"How to play",step1:"Yesterday, players all over the world answered one yes/no question.",step2:"Guess what percent said yes. You have 3 tries.",step3:"Then answer today\u2019s question \u2014 it becomes tomorrow\u2019s puzzle.",legendCorrect:"Within 3 points \u2014 solved!",legendClose:"Within 10 points",legendMiss:"More than 10 points off",arrows:"Arrows tell you whether the real answer is higher or lower.",newDaily:"A new puzzle every day at {time} your time.",play:"Let\u2019s play"},stats:{title:"Statistics",played:"Played",winPct:"Win %",currentStreak:"Current streak",bestStreak:"Best streak",avgError:"Average error",distribution:"Guess distribution",distributionRow:"{label}: {count}",empty:"Play your first game to see your stats.",localOnly:"Stats are stored on this device only."},settings:{title:"Settings",dark:"Dark mode",darkHint:"Easier on the eyes at night.",contrast:"High contrast colors",contrastHint:"Orange and blue tiles plus icons, for color vision deficiency.",language:"Language"},archive:{title:"Archive",intro:"Past puzzles and how the world really answered. Archive games don\u2019t affect your streak.",play:"Play",played:"Played",reveal:"Show result",saidYes:"{pct} said yes",empty:"No past puzzles yet. Come back in a few days!",loadMore:"Load more",score:"{score}/3",notFound:"That puzzle doesn\u2019t exist or isn\u2019t available yet.",back:"Back to the archive"},suggest:{title:"Suggest a question",intro:"Got a yes/no question the whole world could answer? A human reads every suggestion before it\u2019s used.",label:"Your question",placeholder:"Have you ever\u2026?",hint:"Yes/no and about everyday life. Nothing about health, religion, politics, money or anything private.",counter:"{count}/{max}",nickname:"Nickname (optional)",honeypot:"Leave this field empty",submit:"Send suggestion",sending:"Sending\u2026",success:"Thank you! Your question is in the review queue.",another:"Suggest another",errors:{tooShort:"Please write at least 8 characters.",tooLong:"Please keep it under {max} characters.",profanity:"Let\u2019s keep it friendly \u2014 please rephrase.",rateLimited:"You\u2019ve sent a lot of suggestions. Try again in an hour.",generic:"Something went wrong. Try again."}},privacy:{title:"Privacy",updated:"Last updated: {date}",intro:"Guess the Crowd works without accounts, ads or tracking. Here is exactly what we store.",sections:["On your device: a random player ID, your settings, your language and your game history (for stats). This is stored in your browser\u2019s local storage, not in cookies. Clearing your browser data removes it.","On our server: your yes/no answer to each question and your guesses, linked only to the random player ID. We do not know who you are.","For abuse protection we keep a salted, one-way hash of your IP address for at most two days. The salt changes every day, so hashes from different days cannot be linked. We never store your raw IP address.","If you suggest a question, we store its text, its language and the nickname you entered (if any).","We use no tracking cookies, no advertising and no third-party analytics that track individuals. If voting is abused we may show a Cloudflare Turnstile check, which processes data under Cloudflare\u2019s privacy policy.","Results are only ever published as totals and percentages.","Questions or deletion requests: contact us at {email}. Because we don\u2019t know who you are, include your player ID (shown below) so we can find your data."],playerId:"Your player ID on this device: {id}",noPlayerId:"No player ID has been created on this device yet."},notFound:{title:"Page not found",body:"This page doesn\u2019t exist."},admin:{title:"Admin",signInTitle:"Admin sign-in",email:"Email",password:"Password",signIn:"Sign in",signOut:"Sign out",signInError:"Sign-in failed. Check your email and password.",forbidden:"This account is not an admin.",notConfigured:"Supabase is not configured. Set the environment variables listed in the README.",tabs:{schedule:"Schedule",questions:"Questions",moderation:"Moderation"},warningSchedule:"Only {count} of the next 14 days have a question. First empty day: {date}.",scheduledOk:"All of the next 14 days are scheduled.",pendingSubmissions:{one:"{count} suggestion waiting for review",other:"{count} suggestions waiting for review"},today:"Today (UTC)",prevWeeks:"Earlier",nextWeeks:"Later",empty:"Empty",selectDay:"Select a day to schedule, move or void a question.",assign:"Assign a ready question",assignPlaceholder:"Choose a question\u2026",noReady:"No ready questions. Review translations in the Questions tab first.",moveTo:"Move to date",move:"Move",unschedule:"Unschedule",void:"Void",voidConfirm:"Void this question? It will never be shown as a puzzle and voting stops.",delete:"Delete",deleteConfirm:"Delete this question permanently?",edit:"Edit translations",stats:"Live stats",status:{draft:"Draft",scheduled:"Scheduled",live:"Live",closed:"Closed",void:"Void"},ready:"Ready",notReady:"Needs review",filterAll:"All",search:"Search questions",newQuestion:"New question",save:"Save",saved:"Saved",cancel:"Cancel",reviewed:"Reviewed",translationMissing:"Missing",minVotes:"Minimum votes to be playable",votes:"Votes",yesPct:"Yes %",perLocale:"By language",perHour:"Votes per hour (UTC)",guessesStarted:"Games started",guessesFinished:"Games finished",guessesSolved:"Solved",avgError:"Average error",noData:"No data yet.",moderationEmpty:"No suggestions waiting. Nice!",approve:"Approve as draft",reject:"Reject",submittedBy:"by {name}",anonymous:"anonymous",approvedNote:"Approved \u2014 add the other translations in the Questions tab.",errors:{not_ready:"Every language needs a reviewed translation first.",date_taken:"That day already has a question.",date_in_past:"You can\u2019t schedule in the past.",locked:"Live and closed questions can\u2019t be changed. Void it instead.",has_votes:"This question already has votes and can\u2019t be deleted.",not_found:"Question not found.",already_reviewed:"This suggestion was already reviewed.",empty_question:"Write at least one translation.",generic:"Something went wrong."},assignButton:"Assign",sourceCommunity:"Community",statusFilter:"Status"}};var ts={meta:{title:"Mida rahvas arvab? \u2013 igap\xE4evane maailmak\xFCsitluse m\xE4ng",description:"Iga p\xE4ev \xFCks jah/ei-k\xFCsimus kogu maailmale. Arva kolme katsega, mitu protsenti m\xE4ngijatest vastas \u201Ejah\u201C.",archiveTitle:"Arhiiv \u2013 Mida rahvas arvab?",suggestTitle:"Paku k\xFCsimus \u2013 Mida rahvas arvab?",privacyTitle:"Privaatsus \u2013 Mida rahvas arvab?",adminTitle:"Haldus \u2013 Mida rahvas arvab?"},app:{name:"Mida rahvas arvab?",logo:"MIDA RAHVAS ARVAB?"},nav:{help:"Kuidas m\xE4ngida",stats:"Statistika",settings:"Seaded",language:"Keel",archive:"Arhiiv",suggest:"Paku k\xFCsimus",privacy:"Privaatsus",close:"Sulge",backToGame:"Tagasi t\xE4nase m\xE4ngu juurde",home:"Avaleht"},langSuggest:{text:"See m\xE4ng on saadaval ka keeles: {language}.",switch:"Vaheta",dismiss:"Ei, ait\xE4h"},common:{loading:"Laadin\u2026",error:"Midagi l\xE4ks valesti.",offline:"Tundub, et interneti\xFChendus puudub. Kontrolli \xFChendust.",retry:"Proovi uuesti",yes:"Jah",no:"Ei"},puzzle:{number:"M\xF5istatus nr {number}",kickerDaily:"Eile vastas maailm k\xFCsimusele:",kickerArchive:"{date} vastas maailm k\xFCsimusele:",prompt:"Mitu % vastas \u201Ejah\u201C?",archiveBadge:"Arhiivim\xF5istatus \xB7 ei m\xF5juta sinu seeriat"},game:{guess:"Arva",decrease:"V\xE4henda \xFChe v\xF5rra",increase:"Suurenda \xFChe v\xF5rra",sliderLabel:"Sinu pakkumine: mitu protsenti m\xE4ngijatest vastas \u201Ejah\u201C",attemptsLeft:{one:"J\xE4\xE4nud {count} katse",other:"J\xE4\xE4nud {count} katset"},repeated:"Sa juba pakkusid {value}.",sending:"Kontrollin\u2026",tileLabel:"{n}. pakkumine: {value} protsenti, {verdict}",tileEmpty:"{n}. pakkumine: veel kasutamata",verdict:{correct:"\xF5ige!",close:"l\xE4hedal, \xF5ige vastus on {direction}",miss:"kaugel, \xF5ige vastus on {direction}"},direction:{up:"suurem",down:"v\xE4iksem"},higher:"Rohkem",lower:"V\xE4hem",error:"Pakkumine ei j\xF5udnud kohale. Proovi uuesti.",rateLimited:"Sinu v\xF5rgust tuleb liiga palju p\xE4ringuid. Oota hetk ja proovi uuesti."},fallback:{tooFewVotes:"Eilne k\xFCsimus sai vaid {votes} vastust {needed} vajalikust, seega m\xE4ngime viimast m\xF5istatust, millel oli piisavalt vastajaid.",noQuestion:"Eile k\xFCsimust ei olnud, seega m\xE4ngime viimast m\xF5istatust."},launch:{title:"Tere tulemast, see on esimene p\xE4ev!",body:"Iga p\xE4ev vastab kogu maailm \xFChele jah/ei-k\xFCsimusele. J\xE4rgmisel p\xE4eval arvad sina, mitu protsenti vastas \u201Ejah\u201C.",cta:"Vasta t\xE4nasele k\xFCsimusele, et m\xE4ng k\xE4ima l\xFCkata \u2014 esimene m\xF5istatus avaneb homme."},result:{solved:{one:"Lahendatud {count} katsega!",other:"Lahendatud {count} katsega!"},notSolved:"Seekord ei \xF5nnestunud!",saidYes:"{pct} vastas \u201Ejah\u201C",players:{one:"{count} m\xE4ngija",other:"{count} m\xE4ngijat"},spotOn:"T\xE4pselt \xF5ige!",off:{one:"Eksisid {count} punkti v\xF5rra.",other:"Eksisid {count} punkti v\xF5rra."},yourGuesses:"Sinu pakkumised",realAnswer:"Tegelik vastus",within3:"{pct} m\xE4ngijatest pakkus \xB13 piires.",firstToFinish:"Sa oled esimene, kes selle m\xF5istatuse l\xF5petas.",histogramTitle:"K\xF5igi m\xE4ngijate viimased pakkumised",histogramLabel:"{count} m\xE4ngijat pakkus vahemikus {from}\u2013{to}",breakdownTitle:"\u201EJah\u201C keelte kaupa",breakdownNote:"N\xE4itame keeli, milles on v\xE4hemalt {min} vastust.",source:"Tulemuse allikas",seededNote:"See esimene m\xF5istatus p\xF5hineb avaldatud k\xFCsitlusel.",share:"Jaga",copied:"Kopeeritud!",copyFailed:"Kopeerimine ei \xF5nnestunud. Proovi uuesti.",nextPuzzle:"J\xE4rgmine m\xF5istatus",nextAt:"kell {time} sinu aja j\xE4rgi",archiveLabel:"arhiiv"},vote:{title:"T\xE4nane k\xFCsimus",subtitle:"Vasta ausalt. Homme arvavad k\xF5ik, kuidas maailm vastas.",thanks:"Ait\xE4h, sinu vastus on kirjas!",youAnswered:"Sinu vastus: \u201E{answer}\u201C.",comeBack:"Tulemus selgub homme. Tule tagasi ja m\xE4ngi!",none:"T\xE4na k\xFCsimust pole. Vaata homme uuesti!",error:"Vastus ei j\xF5udnud kohale. Proovi uuesti.",closed:"Sellele k\xFCsimusele vastamine on l\xF5ppenud.",rateLimited:"Sinu v\xF5rgust on tulnud liiga palju vastuseid. Proovi hiljem uuesti.",challenge:"Kiire kontroll: kinnita palun, et oled inimene.",challengeFailed:"Kontroll ei \xF5nnestunud. Proovi uuesti.",open:"Vasta t\xE4nasele k\xFCsimusele"},help:{title:"Kuidas m\xE4ngida",step1:"Eile vastasid m\xE4ngijad \xFCle kogu maailma \xFChele jah/ei-k\xFCsimusele.",step2:"Arva, mitu protsenti vastas \u201Ejah\u201C. Sul on 3 katset.",step3:"Seej\xE4rel vasta t\xE4nasele k\xFCsimusele \u2014 sellest saab homne m\xF5istatus.",legendCorrect:"Kuni 3 punkti kaugusel \u2014 lahendatud!",legendClose:"Kuni 10 punkti kaugusel",legendMiss:"Rohkem kui 10 punkti m\xF6\xF6da",arrows:"Nooled n\xE4itavad, kas tegelik vastus on suurem v\xF5i v\xE4iksem.",newDaily:"Uus m\xF5istatus iga p\xE4ev kell {time} sinu aja j\xE4rgi.",play:"M\xE4ngima!"},stats:{title:"Statistika",played:"M\xE4nge",winPct:"V\xF5ite %",currentStreak:"Praegune seeria",bestStreak:"Parim seeria",avgError:"Keskmine viga",distribution:"Katsete jaotus",distributionRow:"{label}: {count}",empty:"M\xE4ngi esimene m\xE4ng, et oma statistikat n\xE4ha.",localOnly:"Statistika on salvestatud ainult selles seadmes."},settings:{title:"Seaded",dark:"Tume re\u017Eiim",darkHint:"\xD5htul silmadele mahedam.",contrast:"K\xF5rge kontrastsusega v\xE4rvid",contrastHint:"Oran\u017Eid ja sinised ruudud koos ikoonidega, v\xE4rvipimedusega m\xE4ngijatele.",language:"Keel"},archive:{title:"Arhiiv",intro:"Varasemad m\xF5istatused ja see, kuidas maailm tegelikult vastas. Arhiivim\xE4ngud ei m\xF5juta sinu seeriat.",play:"M\xE4ngi",played:"M\xE4ngitud",reveal:"N\xE4ita tulemust",saidYes:"{pct} vastas \u201Ejah\u201C",empty:"Varasemaid m\xF5istatusi veel pole. Tule m\xF5ne p\xE4eva p\xE4rast tagasi!",loadMore:"N\xE4ita rohkem",score:"{score}/3",notFound:"Sellist m\xF5istatust pole v\xF5i see pole veel saadaval.",back:"Tagasi arhiivi"},suggest:{title:"Paku k\xFCsimus",intro:"Kas sul on jah/ei-k\xFCsimus, millele saaks vastata kogu maailm? Iga ettepaneku loeb enne kasutamist l\xE4bi p\xE4ris inimene.",label:"Sinu k\xFCsimus",placeholder:"Kas oled kunagi\u2026?",hint:"Jah/ei-k\xFCsimus igap\xE4evaelust. Mitte midagi tervise, usu, poliitika, raha ega isiklike asjade kohta.",counter:"{count}/{max}",nickname:"H\xFC\xFCdnimi (ei ole kohustuslik)",honeypot:"J\xE4ta see v\xE4li t\xFChjaks",submit:"Saada ettepanek",sending:"Saadan\u2026",success:"Ait\xE4h! Sinu k\xFCsimus ootab n\xFC\xFCd \xFClevaatamist.",another:"Paku veel \xFCks",errors:{tooShort:"Kirjuta palun v\xE4hemalt 8 t\xE4hem\xE4rki.",tooLong:"Palun mahu {max} t\xE4hem\xE4rgi sisse.",profanity:"Hoiame tooni s\xF5bralikuna \u2014 s\xF5nasta palun \xFCmber.",rateLimited:"Oled saatnud palju ettepanekuid. Proovi tunni aja p\xE4rast uuesti.",generic:"Midagi l\xE4ks valesti. Proovi uuesti."}},privacy:{title:"Privaatsus",updated:"Viimati uuendatud: {date}",intro:"\u201EMida rahvas arvab?\u201C t\xF6\xF6tab ilma kontode, reklaamide ja j\xE4lgimiseta. Siin on t\xE4pselt kirjas, mida me salvestame.",sections:["Sinu seadmes: juhuslik m\xE4ngija-ID, sinu seaded, keel ja m\xE4ngude ajalugu (statistika jaoks). Need on salvestatud brauseri kohalikku m\xE4llu (local storage), mitte k\xFCpsistesse. Brauseri andmete kustutamine eemaldab need.","Meie serveris: sinu jah/ei-vastus igale k\xFCsimusele ja sinu pakkumised, mis on seotud ainult juhusliku m\xE4ngija-ID-ga. Me ei tea, kes sa oled.","Kuritarvituste v\xE4ltimiseks hoiame kuni kaks p\xE4eva sinu IP-aadressi soolatud \xFChesuunalist r\xE4si. Sool vahetub iga p\xE4ev, nii et eri p\xE4evade r\xE4sisid ei saa omavahel siduda. Sinu tegelikku IP-aadressi me ei salvesta.","Kui pakud k\xFCsimuse, salvestame selle teksti, keele ja sisestatud h\xFC\xFCdnime (kui see on olemas).","Me ei kasuta j\xE4lgimisk\xFCpsiseid, reklaame ega kolmandate osapoolte anal\xFC\xFCtikat, mis j\xE4lgib \xFCksikisikuid. Kui h\xE4\xE4letamist kuritarvitatakse, v\xF5ime n\xE4idata Cloudflare Turnstile\u2019i kontrolli, mille andmeid t\xF6\xF6deldakse Cloudflare\u2019i privaatsuspoliitika j\xE4rgi.","Tulemusi avaldame ainult koondarvude ja protsentidena.","K\xFCsimuste v\xF5i andmete kustutamise sooviga kirjuta aadressile {email}. Kuna me ei tea, kes sa oled, lisa kirjale oma m\xE4ngija-ID (n\xE4ed seda allpool), et saaksime sinu andmed \xFCles leida."],playerId:"Sinu m\xE4ngija-ID selles seadmes: {id}",noPlayerId:"Selles seadmes pole veel m\xE4ngija-ID-d loodud."},notFound:{title:"Lehte ei leitud",body:"Sellist lehte pole olemas."},admin:{title:"Haldus",signInTitle:"Halduri sisselogimine",email:"E-post",password:"Parool",signIn:"Logi sisse",signOut:"Logi v\xE4lja",signInError:"Sisselogimine eba\xF5nnestus. Kontrolli e-posti ja parooli.",forbidden:"See konto ei ole haldur.",notConfigured:"Supabase pole seadistatud. M\xE4\xE4ra README-s loetletud keskkonnamuutujad.",tabs:{schedule:"Ajakava",questions:"K\xFCsimused",moderation:"Modereerimine"},warningSchedule:"J\xE4rgmisest 14 p\xE4evast on k\xFCsimus ainult {count} p\xE4eval. Esimene t\xFChi p\xE4ev: {date}.",scheduledOk:"K\xF5igil j\xE4rgmisel 14 p\xE4eval on k\xFCsimus olemas.",pendingSubmissions:{one:"{count} ettepanek ootab \xFClevaatamist",other:"{count} ettepanekut ootab \xFClevaatamist"},today:"T\xE4na (UTC)",prevWeeks:"Varem",nextWeeks:"Hiljem",empty:"T\xFChi",selectDay:"Vali p\xE4ev, et k\xFCsimust ajastada, liigutada v\xF5i t\xFChistada.",assign:"M\xE4\xE4ra valmis k\xFCsimus",assignPlaceholder:"Vali k\xFCsimus\u2026",noReady:"Valmis k\xFCsimusi pole. Vaata esmalt t\xF5lked \xFCle vahekaardil \u201EK\xFCsimused\u201C.",moveTo:"Liiguta kuup\xE4evale",move:"Liiguta",unschedule:"Eemalda ajakavast",void:"T\xFChista",voidConfirm:"Kas t\xFChistada see k\xFCsimus? Seda ei n\xE4idata enam kunagi m\xF5istatusena ja h\xE4\xE4letamine l\xF5peb.",delete:"Kustuta",deleteConfirm:"Kas kustutada see k\xFCsimus j\xE4\xE4davalt?",edit:"Muuda t\xF5lkeid",stats:"Reaalajas statistika",status:{draft:"Mustand",scheduled:"Ajastatud",live:"Aktiivne",closed:"Suletud",void:"T\xFChistatud"},ready:"Valmis",notReady:"Vajab \xFClevaatamist",filterAll:"K\xF5ik",search:"Otsi k\xFCsimusi",newQuestion:"Uus k\xFCsimus",save:"Salvesta",saved:"Salvestatud",cancel:"Loobu",reviewed:"\xDCle vaadatud",translationMissing:"Puudub",minVotes:"Minimaalne h\xE4\xE4lte arv m\xE4ngitavaks muutumiseks",votes:"H\xE4\xE4li",yesPct:"Jah %",perLocale:"Keelte kaupa",perHour:"H\xE4\xE4li tunnis (UTC)",guessesStarted:"Alustatud m\xE4nge",guessesFinished:"L\xF5petatud m\xE4nge",guessesSolved:"Lahendatud",avgError:"Keskmine viga",noData:"Andmeid veel pole.",moderationEmpty:"\xDChtegi ettepanekut ei oota. Tubli!",approve:"Kinnita mustandina",reject:"L\xFCkka tagasi",submittedBy:"saatja: {name}",anonymous:"anon\xFC\xFCmne",approvedNote:"Kinnitatud \u2014 lisa teised t\xF5lked vahekaardil \u201EK\xFCsimused\u201C.",errors:{not_ready:"Igal keelel peab enne olema \xFCle vaadatud t\xF5lge.",date_taken:"Sellel p\xE4eval on juba k\xFCsimus.",date_in_past:"Minevikku ei saa ajastada.",locked:"Aktiivset v\xF5i suletud k\xFCsimust ei saa muuta. T\xFChista see.",has_votes:"Sellel k\xFCsimusel on juba h\xE4\xE4li ja seda ei saa kustutada.",not_found:"K\xFCsimust ei leitud.",already_reviewed:"See ettepanek on juba \xFCle vaadatud.",empty_question:"Kirjuta v\xE4hemalt \xFCks t\xF5lge.",generic:"Midagi l\xE4ks valesti."},assignButton:"M\xE4\xE4ra",sourceCommunity:"Kogukond",statusFilter:"Olek"}};var as={meta:{title:"\xBFQu\xE9 dice la gente? \u2013 el juego diario de la encuesta mundial",description:"Una pregunta de s\xED o no para todo el mundo, cada d\xEDa. Adivina en tres intentos qu\xE9 porcentaje de jugadores respondi\xF3 que s\xED.",archiveTitle:"Archivo \u2013 \xBFQu\xE9 dice la gente?",suggestTitle:"Sugiere una pregunta \u2013 \xBFQu\xE9 dice la gente?",privacyTitle:"Privacidad \u2013 \xBFQu\xE9 dice la gente?",adminTitle:"Administraci\xF3n \u2013 \xBFQu\xE9 dice la gente?"},app:{name:"\xBFQu\xE9 dice la gente?",logo:"\xBFQU\xC9 DICE LA GENTE?"},nav:{help:"C\xF3mo jugar",stats:"Estad\xEDsticas",settings:"Ajustes",language:"Idioma",archive:"Archivo",suggest:"Sugiere una pregunta",privacy:"Privacidad",close:"Cerrar",backToGame:"Volver al juego de hoy",home:"Inicio"},langSuggest:{text:"Este juego tambi\xE9n est\xE1 disponible en {language}.",switch:"Cambiar",dismiss:"No, gracias"},common:{loading:"Cargando\u2026",error:"Algo sali\xF3 mal.",offline:"Parece que no tienes conexi\xF3n. Revisa tu internet.",retry:"Intentar de nuevo",yes:"S\xED",no:"No"},puzzle:{number:"Reto n.\xBA {number}",kickerDaily:"Ayer el mundo respondi\xF3:",kickerArchive:"El {date} el mundo respondi\xF3:",prompt:"\xBFQu\xE9 % dijo que s\xED?",archiveBadge:"Reto del archivo \xB7 no afecta a tu racha"},game:{guess:"Adivinar",decrease:"Restar 1",increase:"Sumar 1",sliderLabel:"Tu respuesta: porcentaje de jugadores que dijo que s\xED",attemptsLeft:{one:"Te queda {count} intento",other:"Te quedan {count} intentos"},repeated:"Ya probaste con {value}.",sending:"Comprobando\u2026",tileLabel:"Intento {n}: {value} por ciento, {verdict}",tileEmpty:"Intento {n}: sin usar",verdict:{correct:"\xA1correcto!",close:"cerca, la respuesta es {direction}",miss:"lejos, la respuesta es {direction}"},direction:{up:"m\xE1s alta",down:"m\xE1s baja"},higher:"M\xE1s",lower:"Menos",error:"Tu intento no se envi\xF3. Int\xE9ntalo de nuevo.",rateLimited:"Demasiadas solicitudes desde tu red. Espera un momento e int\xE9ntalo de nuevo."},fallback:{tooFewVotes:"La pregunta de ayer solo recibi\xF3 {votes} de las {needed} respuestas necesarias, as\xED que aqu\xED tienes el reto m\xE1s reciente con suficientes jugadores.",noQuestion:"Ayer no hubo pregunta, as\xED que aqu\xED tienes el reto m\xE1s reciente."},launch:{title:"\xA1Te damos la bienvenida al primer d\xEDa!",body:"Cada d\xEDa, todo el mundo responde una pregunta de s\xED o no. Al d\xEDa siguiente, adivinas qu\xE9 porcentaje dijo que s\xED.",cta:"Responde la pregunta de hoy para empezar: el primer reto se abre ma\xF1ana."},result:{solved:{one:"\xA1Resuelto en {count} intento!",other:"\xA1Resuelto en {count} intentos!"},notSolved:"\xA1Esta vez no!",saidYes:"El {pct} dijo que s\xED",players:{one:"{count} jugador",other:"{count} jugadores"},spotOn:"\xA1Exacto, en el blanco!",off:{one:"Te quedaste a {count} punto.",other:"Te quedaste a {count} puntos."},yourGuesses:"Tus intentos",realAnswer:"Respuesta real",within3:"El {pct} de los jugadores acert\xF3 con un margen de \xB13.",firstToFinish:"Nadie hab\xEDa terminado este reto antes que t\xFA.",histogramTitle:"Respuestas finales de todos",histogramLabel:"{count} jugadores respondieron entre {from} y {to}",breakdownTitle:"Dijeron que s\xED, por idioma",breakdownNote:"Solo idiomas con al menos {min} votos.",source:"Fuente de este resultado",seededNote:"Este primer reto usa una encuesta publicada.",share:"Compartir",copied:"\xA1Copiado al portapapeles!",copyFailed:"No se pudo copiar. Int\xE9ntalo de nuevo.",nextPuzzle:"Pr\xF3ximo reto en",nextAt:"a las {time} en tu hora",archiveLabel:"archivo"},vote:{title:"La pregunta de hoy",subtitle:"Responde con sinceridad. Ma\xF1ana todos adivinar\xE1n c\xF3mo respondi\xF3 el mundo.",thanks:"\xA1Gracias, tu respuesta qued\xF3 registrada!",youAnswered:"Respondiste \xAB{answer}\xBB.",comeBack:"El resultado se revela ma\xF1ana. \xA1Vuelve a jugar!",none:"Hoy no hay pregunta. \xA1Vuelve ma\xF1ana!",error:"Tu respuesta no se envi\xF3. Int\xE9ntalo de nuevo.",closed:"La votaci\xF3n de esta pregunta ya cerr\xF3.",rateLimited:"Demasiadas respuestas desde tu red. Int\xE9ntalo m\xE1s tarde.",challenge:"Una comprobaci\xF3n r\xE1pida: confirma que eres una persona.",challengeFailed:"La comprobaci\xF3n no funcion\xF3. Int\xE9ntalo de nuevo.",open:"Responde la pregunta de hoy"},help:{title:"C\xF3mo jugar",step1:"Ayer, jugadores de todo el mundo respondieron una pregunta de s\xED o no.",step2:"Adivina qu\xE9 porcentaje dijo que s\xED. Tienes 3 intentos.",step3:"Despu\xE9s responde la pregunta de hoy: ser\xE1 el reto de ma\xF1ana.",legendCorrect:"A 3 puntos o menos: \xA1resuelto!",legendClose:"A 10 puntos o menos",legendMiss:"A m\xE1s de 10 puntos",arrows:"Las flechas te indican si la respuesta real es m\xE1s alta o m\xE1s baja.",newDaily:"Un reto nuevo cada d\xEDa a las {time} en tu hora.",play:"\xA1A jugar!"},stats:{title:"Estad\xEDsticas",played:"Jugados",winPct:"% de victorias",currentStreak:"Racha actual",bestStreak:"Mejor racha",avgError:"Error medio",distribution:"Distribuci\xF3n de intentos",distributionRow:"{label}: {count}",empty:"Juega tu primera partida para ver tus estad\xEDsticas.",localOnly:"Las estad\xEDsticas se guardan solo en este dispositivo."},settings:{title:"Ajustes",dark:"Modo oscuro",darkHint:"M\xE1s c\xF3modo para la vista de noche.",contrast:"Colores de alto contraste",contrastHint:"Casillas naranjas y azules con \xEDconos, para dificultades en la visi\xF3n del color.",language:"Idioma"},archive:{title:"Archivo",intro:"Retos anteriores y c\xF3mo respondi\xF3 realmente el mundo. Las partidas del archivo no afectan a tu racha.",play:"Jugar",played:"Jugado",reveal:"Ver resultado",saidYes:"El {pct} dijo que s\xED",empty:"Todav\xEDa no hay retos anteriores. \xA1Vuelve en unos d\xEDas!",loadMore:"Cargar m\xE1s",score:"{score}/3",notFound:"Ese reto no existe o todav\xEDa no est\xE1 disponible.",back:"Volver al archivo"},suggest:{title:"Sugiere una pregunta",intro:"\xBFTienes una pregunta de s\xED o no que todo el mundo pueda responder? Una persona revisa cada sugerencia antes de usarla.",label:"Tu pregunta",placeholder:"\xBFAlguna vez has\u2026?",hint:"De s\xED o no y sobre la vida cotidiana. Nada sobre salud, religi\xF3n, pol\xEDtica, dinero ni temas privados.",counter:"{count}/{max}",nickname:"Apodo (opcional)",honeypot:"Deja este campo vac\xEDo",submit:"Enviar sugerencia",sending:"Enviando\u2026",success:"\xA1Gracias! Tu pregunta est\xE1 en la cola de revisi\xF3n.",another:"Sugerir otra",errors:{tooShort:"Escribe al menos 8 caracteres.",tooLong:"Usa como m\xE1ximo {max} caracteres.",profanity:"Mantengamos un tono amable: reform\xFAlala, por favor.",rateLimited:"Enviaste muchas sugerencias. Int\xE9ntalo de nuevo en una hora.",generic:"Algo sali\xF3 mal. Int\xE9ntalo de nuevo."}},privacy:{title:"Privacidad",updated:"\xDAltima actualizaci\xF3n: {date}",intro:"\xBFQu\xE9 dice la gente? funciona sin cuentas, sin anuncios y sin rastreo. Esto es exactamente lo que guardamos.",sections:["En tu dispositivo: un identificador de jugador aleatorio, tus ajustes, tu idioma y tu historial de partidas (para las estad\xEDsticas). Se guardan en el almacenamiento local del navegador, no en cookies. Si borras los datos del navegador, desaparecen.","En nuestro servidor: tu respuesta de s\xED o no a cada pregunta y tus intentos, vinculados solo al identificador aleatorio. No sabemos qui\xE9n eres.","Para evitar abusos guardamos, durante dos d\xEDas como m\xE1ximo, un hash irreversible y con sal de tu direcci\xF3n IP. La sal cambia cada d\xEDa, as\xED que los hashes de d\xEDas distintos no se pueden relacionar. Nunca guardamos tu direcci\xF3n IP real.","Si sugieres una pregunta, guardamos su texto, su idioma y el apodo que escribiste (si lo hay).","No usamos cookies de rastreo, publicidad ni anal\xEDtica de terceros que siga a las personas. Si hay abuso en las votaciones, podemos mostrar una verificaci\xF3n de Cloudflare Turnstile, que trata los datos seg\xFAn la pol\xEDtica de privacidad de Cloudflare.","Los resultados solo se publican como totales y porcentajes.","Para preguntas o solicitudes de borrado, escr\xEDbenos a {email}. Como no sabemos qui\xE9n eres, incluye tu identificador de jugador (lo ves abajo) para que podamos encontrar tus datos."],playerId:"Tu identificador de jugador en este dispositivo: {id}",noPlayerId:"Todav\xEDa no se ha creado un identificador de jugador en este dispositivo."},notFound:{title:"P\xE1gina no encontrada",body:"Esta p\xE1gina no existe."},admin:{title:"Administraci\xF3n",signInTitle:"Acceso de administraci\xF3n",email:"Correo electr\xF3nico",password:"Contrase\xF1a",signIn:"Entrar",signOut:"Salir",signInError:"No se pudo iniciar sesi\xF3n. Revisa el correo y la contrase\xF1a.",forbidden:"Esta cuenta no es de administraci\xF3n.",notConfigured:"Supabase no est\xE1 configurado. Define las variables de entorno indicadas en el README.",tabs:{schedule:"Calendario",questions:"Preguntas",moderation:"Moderaci\xF3n"},warningSchedule:"Solo {count} de los pr\xF3ximos 14 d\xEDas tienen pregunta. Primer d\xEDa vac\xEDo: {date}.",scheduledOk:"Los pr\xF3ximos 14 d\xEDas tienen pregunta.",pendingSubmissions:{one:"{count} sugerencia pendiente de revisi\xF3n",other:"{count} sugerencias pendientes de revisi\xF3n"},today:"Hoy (UTC)",prevWeeks:"Antes",nextWeeks:"Despu\xE9s",empty:"Vac\xEDo",selectDay:"Elige un d\xEDa para programar, mover o anular una pregunta.",assign:"Asignar una pregunta lista",assignPlaceholder:"Elige una pregunta\u2026",noReady:"No hay preguntas listas. Revisa primero las traducciones en la pesta\xF1a Preguntas.",moveTo:"Mover a la fecha",move:"Mover",unschedule:"Quitar del calendario",void:"Anular",voidConfirm:"\xBFAnular esta pregunta? Nunca se mostrar\xE1 como reto y la votaci\xF3n se detiene.",delete:"Eliminar",deleteConfirm:"\xBFEliminar esta pregunta para siempre?",edit:"Editar traducciones",stats:"Estad\xEDsticas en vivo",status:{draft:"Borrador",scheduled:"Programada",live:"En curso",closed:"Cerrada",void:"Anulada"},ready:"Lista",notReady:"Falta revisar",filterAll:"Todas",search:"Buscar preguntas",newQuestion:"Nueva pregunta",save:"Guardar",saved:"Guardado",cancel:"Cancelar",reviewed:"Revisada",translationMissing:"Falta",minVotes:"Votos m\xEDnimos para ser jugable",votes:"Votos",yesPct:"% de s\xED",perLocale:"Por idioma",perHour:"Votos por hora (UTC)",guessesStarted:"Partidas empezadas",guessesFinished:"Partidas terminadas",guessesSolved:"Resueltas",avgError:"Error medio",noData:"Todav\xEDa no hay datos.",moderationEmpty:"No hay sugerencias pendientes. \xA1Bien!",approve:"Aprobar como borrador",reject:"Rechazar",submittedBy:"de {name}",anonymous:"an\xF3nimo",approvedNote:"Aprobada: a\xF1ade las dem\xE1s traducciones en la pesta\xF1a Preguntas.",errors:{not_ready:"Cada idioma necesita antes una traducci\xF3n revisada.",date_taken:"Ese d\xEDa ya tiene una pregunta.",date_in_past:"No se puede programar en el pasado.",locked:"Las preguntas en curso o cerradas no se pueden cambiar. An\xFAlala.",has_votes:"Esta pregunta ya tiene votos y no se puede eliminar.",not_found:"No se encontr\xF3 la pregunta.",already_reviewed:"Esta sugerencia ya fue revisada.",empty_question:"Escribe al menos una traducci\xF3n.",generic:"Algo sali\xF3 mal."},assignButton:"Asignar",sourceCommunity:"Comunidad",statusFilter:"Estado"}};var Gs={en:es,et:ts,es:as};function ss(e){return Gs[e]}var G=l(p()),_s={en:"Demo: the results are sample numbers so you can try the game right away. In the live game they come from real players.",et:"Demo: tulemused on n\xE4idisarvud, et saaksid m\xE4ngu kohe proovida. P\xE4ris m\xE4ngus tulevad need p\xE4ris m\xE4ngijatelt.",es:"Demo: los resultados son n\xFAmeros de ejemplo para que puedas probar el juego ya. En el juego real vienen de jugadores reales."};function $s(){let{locale:e}=h();return(0,G.jsx)("p",{className:"mx-auto mt-3 w-[calc(100%-32px)] max-w-[448px] rounded-lg border border-line px-3 py-2 text-center text-xs leading-snug text-muted",children:_s[e]})}function Vs({path:e}){return e===""?(0,G.jsx)(ot,{}):e==="archive"?(0,G.jsx)(Wa,{}):/^archive\/\d+$/.test(e)?(0,G.jsx)(ot,{number:Number(e.split("/")[1])},e):e==="suggest"?(0,G.jsx)(Xa,{}):e==="privacy"?(0,G.jsx)(Za,{email:"privacy@guessthecrowd.com"}):(0,G.jsx)(ot,{})}function Fs(){let[e,t]=(0,Ce.useState)(ge());(0,Ce.useEffect)(()=>la(()=>t(ge())),[]),(0,Ce.useEffect)(()=>{let n=r=>{let i=r.target.closest("a"),d=i?.getAttribute("href");!i||!d||!d.startsWith("/")||r.metaKey||r.ctrlKey||(r.preventDefault(),Ue(d))};return document.addEventListener("click",n,!0),()=>document.removeEventListener("click",n,!0)},[]);let[,a,...o]=e.split("/"),s=ve(a)?a:"en";return(0,Ce.useEffect)(()=>{document.documentElement.lang=s},[s]),(0,G.jsx)(_t,{locale:s,messages:ss(s),children:(0,G.jsxs)(Ma,{children:[(0,G.jsx)($s,{}),(0,G.jsx)(Vs,{path:o.join("/")},o.join("/"))]})},s)}var ns="/en";try{let e=localStorage.getItem(ye);e&&ve(e)&&(ns="/"+e),localStorage.setItem("gtc:lang-suggest-dismissed","1")}catch{}ia(ns);(0,os.createRoot)(document.getElementById("root")).render((0,G.jsx)(Fs,{}));})();
+</script>
+</body>
+</html>
