@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "title": "Mida rahvas arvab? – igapäevane maailmaküsitluse mäng",
+    "description": "Iga päev üks jah/ei-küsimus kogu maailmale. Arva kolme katsega, mitu protsenti mängijatest vastas „jah“.",
+    "archiveTitle": "Arhiiv – Mida rahvas arvab?",
+    "suggestTitle": "Paku küsimus – Mida rahvas arvab?",
+    "privacyTitle": "Privaatsus – Mida rahvas arvab?",
+    "adminTitle": "Haldus – Mida rahvas arvab?"
+  },
+  "app": {
+    "name": "Mida rahvas arvab?",
+    "logo": "MIDA RAHVAS ARVAB?"
+  },
+  "nav": {
+    "help": "Kuidas mängida",
+    "stats": "Statistika",
+    "settings": "Seaded",
+    "language": "Keel",
+    "archive": "Arhiiv",
+    "suggest": "Paku küsimus",
+    "privacy": "Privaatsus",
+    "close": "Sulge",
+    "backToGame": "Tagasi tänase mängu juurde",
+    "home": "Avaleht"
+  },
+  "langSuggest": {
+    "text": "See mäng on saadaval ka keeles: {language}.",
+    "switch": "Vaheta",
+    "dismiss": "Ei, aitäh"
+  },
+  "common": {
+    "loading": "Laadin…",
+    "error": "Midagi läks valesti.",
+    "offline": "Tundub, et internetiühendus puudub. Kontrolli ühendust.",
+    "retry": "Proovi uuesti",
+    "yes": "Jah",
+    "no": "Ei"
+  },
+  "puzzle": {
+    "number": "Mõistatus nr {number}",
+    "kickerDaily": "Eile vastas maailm küsimusele:",
+    "kickerArchive": "{date} vastas maailm küsimusele:",
+    "prompt": "Mitu % vastas „jah“?",
+    "archiveBadge": "Arhiivimõistatus · ei mõjuta sinu seeriat"
+  },
+  "game": {
+    "guess": "Arva",
+    "decrease": "Vähenda ühe võrra",
+    "increase": "Suurenda ühe võrra",
+    "sliderLabel": "Sinu pakkumine: mitu protsenti mängijatest vastas „jah“",
+    "attemptsLeft": {
+      "one": "Jäänud {count} katse",
+      "other": "Jäänud {count} katset"
+    },
+    "repeated": "Sa juba pakkusid {value}.",
+    "sending": "Kontrollin…",
+    "tileLabel": "{n}. pakkumine: {value} protsenti, {verdict}",
+    "tileEmpty": "{n}. pakkumine: veel kasutamata",
+    "verdict": {
+      "correct": "õige!",
+      "close": "lähedal, õige vastus on {direction}",
+      "miss": "kaugel, õige vastus on {direction}"
+    },
+    "direction": {
+      "up": "suurem",
+      "down": "väiksem"
+    },
+    "higher": "Rohkem",
+    "lower": "Vähem",
+    "error": "Pakkumine ei jõudnud kohale. Proovi uuesti.",
+    "rateLimited": "Sinu võrgust tuleb liiga palju päringuid. Oota hetk ja proovi uuesti."
+  },
+  "fallback": {
+    "tooFewVotes": "Eilne küsimus sai vaid {votes} vastust {needed} vajalikust, seega mängime viimast mõistatust, millel oli piisavalt vastajaid.",
+    "noQuestion": "Eile küsimust ei olnud, seega mängime viimast mõistatust."
+  },
+  "launch": {
+    "title": "Tere tulemast, see on esimene päev!",
+    "body": "Iga päev vastab kogu maailm ühele jah/ei-küsimusele. Järgmisel päeval arvad sina, mitu protsenti vastas „jah“.",
+    "cta": "Vasta tänasele küsimusele, et mäng käima lükata — esimene mõistatus avaneb homme."
+  },
+  "result": {
+    "solved": {
+      "one": "Lahendatud {count} katsega!",
+      "other": "Lahendatud {count} katsega!"
+    },
+    "notSolved": "Seekord ei õnnestunud!",
+    "saidYes": "{pct} vastas „jah“",
+    "players": {
+      "one": "{count} mängija",
+      "other": "{count} mängijat"
+    },
+    "spotOn": "Täpselt õige!",
+    "off": {
+      "one": "Eksisid {count} punkti võrra.",
+      "other": "Eksisid {count} punkti võrra."
+    },
+    "yourGuesses": "Sinu pakkumised",
+    "realAnswer": "Tegelik vastus",
+    "within3": "{pct} mängijatest pakkus ±3 piires.",
+    "firstToFinish": "Sa oled esimene, kes selle mõistatuse lõpetas.",
+    "histogramTitle": "Kõigi mängijate viimased pakkumised",
+    "histogramLabel": "{count} mängijat pakkus vahemikus {from}–{to}",
+    "breakdownTitle": "„Jah“ keelte kaupa",
+    "breakdownNote": "Näitame keeli, milles on vähemalt {min} vastust.",
+    "source": "Tulemuse allikas",
+    "seededNote": "See esimene mõistatus põhineb avaldatud küsitlusel.",
+    "share": "Jaga",
+    "copied": "Kopeeritud!",
+    "copyFailed": "Kopeerimine ei õnnestunud. Proovi uuesti.",
+    "nextPuzzle": "Järgmine mõistatus",
+    "nextAt": "kell {time} sinu aja järgi",
+    "archiveLabel": "arhiiv"
+  },
+  "vote": {
+    "title": "Tänane küsimus",
+    "subtitle": "Vasta ausalt. Homme arvavad kõik, kuidas maailm vastas.",
+    "thanks": "Aitäh, sinu vastus on kirjas!",
+    "youAnswered": "Sinu vastus: „{answer}“.",
+    "comeBack": "Tulemus selgub homme. Tule tagasi ja mängi!",
+    "none": "Täna küsimust pole. Vaata homme uuesti!",
+    "error": "Vastus ei jõudnud kohale. Proovi uuesti.",
+    "closed": "Sellele küsimusele vastamine on lõppenud.",
+    "rateLimited": "Sinu võrgust on tulnud liiga palju vastuseid. Proovi hiljem uuesti.",
+    "challenge": "Kiire kontroll: kinnita palun, et oled inimene.",
+    "challengeFailed": "Kontroll ei õnnestunud. Proovi uuesti.",
+    "open": "Vasta tänasele küsimusele"
+  },
+  "help": {
+    "title": "Kuidas mängida",
+    "step1": "Eile vastasid mängijad üle kogu maailma ühele jah/ei-küsimusele.",
+    "step2": "Arva, mitu protsenti vastas „jah“. Sul on 3 katset.",
+    "step3": "Seejärel vasta tänasele küsimusele — sellest saab homne mõistatus.",
+    "legendCorrect": "Kuni 3 punkti kaugusel — lahendatud!",
+    "legendClose": "Kuni 10 punkti kaugusel",
+    "legendMiss": "Rohkem kui 10 punkti mööda",
+    "arrows": "Nooled näitavad, kas tegelik vastus on suurem või väiksem.",
+    "newDaily": "Uus mõistatus iga päev kell {time} sinu aja järgi.",
+    "play": "Mängima!"
+  },
+  "stats": {
+    "title": "Statistika",
+    "played": "Mänge",
+    "winPct": "Võite %",
+    "currentStreak": "Praegune seeria",
+    "bestStreak": "Parim seeria",
+    "avgError": "Keskmine viga",
+    "distribution": "Katsete jaotus",
+    "distributionRow": "{label}: {count}",
+    "empty": "Mängi esimene mäng, et oma statistikat näha.",
+    "localOnly": "Statistika on salvestatud ainult selles seadmes."
+  },
+  "settings": {
+    "title": "Seaded",
+    "dark": "Tume režiim",
+    "darkHint": "Õhtul silmadele mahedam.",
+    "contrast": "Kõrge kontrastsusega värvid",
+    "contrastHint": "Oranžid ja sinised ruudud koos ikoonidega, värvipimedusega mängijatele.",
+    "language": "Keel"
+  },
+  "archive": {
+    "title": "Arhiiv",
+    "intro": "Varasemad mõistatused ja see, kuidas maailm tegelikult vastas. Arhiivimängud ei mõjuta sinu seeriat.",
+    "play": "Mängi",
+    "played": "Mängitud",
+    "reveal": "Näita tulemust",
+    "saidYes": "{pct} vastas „jah“",
+    "empty": "Varasemaid mõistatusi veel pole. Tule mõne päeva pärast tagasi!",
+    "loadMore": "Näita rohkem",
+    "score": "{score}/3",
+    "notFound": "Sellist mõistatust pole või see pole veel saadaval.",
+    "back": "Tagasi arhiivi"
+  },
+  "suggest": {
+    "title": "Paku küsimus",
+    "intro": "Kas sul on jah/ei-küsimus, millele saaks vastata kogu maailm? Iga ettepaneku loeb enne kasutamist läbi päris inimene.",
+    "label": "Sinu küsimus",
+    "placeholder": "Kas oled kunagi…?",
+    "hint": "Jah/ei-küsimus igapäevaelust. Mitte midagi tervise, usu, poliitika, raha ega isiklike asjade kohta.",
+    "counter": "{count}/{max}",
+    "nickname": "Hüüdnimi (ei ole kohustuslik)",
+    "honeypot": "Jäta see väli tühjaks",
+    "submit": "Saada ettepanek",
+    "sending": "Saadan…",
+    "success": "Aitäh! Sinu küsimus ootab nüüd ülevaatamist.",
+    "another": "Paku veel üks",
+    "errors": {
+      "tooShort": "Kirjuta palun vähemalt 8 tähemärki.",
+      "tooLong": "Palun mahu {max} tähemärgi sisse.",
+      "profanity": "Hoiame tooni sõbralikuna — sõnasta palun ümber.",
+      "rateLimited": "Oled saatnud palju ettepanekuid. Proovi tunni aja pärast uuesti.",
+      "generic": "Midagi läks valesti. Proovi uuesti."
+    }
+  },
+  "privacy": {
+    "title": "Privaatsus",
+    "updated": "Viimati uuendatud: {date}",
+    "intro": "„Mida rahvas arvab?“ töötab ilma kontode, reklaamide ja jälgimiseta. Siin on täpselt kirjas, mida me salvestame.",
+    "sections": [
+      "Sinu seadmes: juhuslik mängija-ID, sinu seaded, keel ja mängude ajalugu (statistika jaoks). Need on salvestatud brauseri kohalikku mällu (local storage), mitte küpsistesse. Brauseri andmete kustutamine eemaldab need.",
+      "Meie serveris: sinu jah/ei-vastus igale küsimusele ja sinu pakkumised, mis on seotud ainult juhusliku mängija-ID-ga. Me ei tea, kes sa oled.",
+      "Kuritarvituste vältimiseks hoiame kuni kaks päeva sinu IP-aadressi soolatud ühesuunalist räsi. Sool vahetub iga päev, nii et eri päevade räsisid ei saa omavahel siduda. Sinu tegelikku IP-aadressi me ei salvesta.",
+      "Kui pakud küsimuse, salvestame selle teksti, keele ja sisestatud hüüdnime (kui see on olemas).",
+      "Me ei kasuta jälgimisküpsiseid, reklaame ega kolmandate osapoolte analüütikat, mis jälgib üksikisikuid. Kui hääletamist kuritarvitatakse, võime näidata Cloudflare Turnstile’i kontrolli, mille andmeid töödeldakse Cloudflare’i privaatsuspoliitika järgi.",
+      "Tulemusi avaldame ainult koondarvude ja protsentidena.",
+      "Küsimuste või andmete kustutamise sooviga kirjuta aadressile {email}. Kuna me ei tea, kes sa oled, lisa kirjale oma mängija-ID (näed seda allpool), et saaksime sinu andmed üles leida."
+    ],
+    "playerId": "Sinu mängija-ID selles seadmes: {id}",
+    "noPlayerId": "Selles seadmes pole veel mängija-ID-d loodud."
+  },
+  "notFound": {
+    "title": "Lehte ei leitud",
+    "body": "Sellist lehte pole olemas."
+  },
+  "admin": {
+    "title": "Haldus",
+    "signInTitle": "Halduri sisselogimine",
+    "email": "E-post",
+    "password": "Parool",
+    "signIn": "Logi sisse",
+    "signOut": "Logi välja",
+    "signInError": "Sisselogimine ebaõnnestus. Kontrolli e-posti ja parooli.",
+    "forbidden": "See konto ei ole haldur.",
+    "notConfigured": "Supabase pole seadistatud. Määra README-s loetletud keskkonnamuutujad.",
+    "tabs": {
+      "schedule": "Ajakava",
+      "questions": "Küsimused",
+      "moderation": "Modereerimine"
+    },
+    "warningSchedule": "Järgmisest 14 päevast on küsimus ainult {count} päeval. Esimene tühi päev: {date}.",
+    "scheduledOk": "Kõigil järgmisel 14 päeval on küsimus olemas.",
+    "pendingSubmissions": {
+      "one": "{count} ettepanek ootab ülevaatamist",
+      "other": "{count} ettepanekut ootab ülevaatamist"
+    },
+    "today": "Täna (UTC)",
+    "prevWeeks": "Varem",
+    "nextWeeks": "Hiljem",
+    "empty": "Tühi",
+    "selectDay": "Vali päev, et küsimust ajastada, liigutada või tühistada.",
+    "assign": "Määra valmis küsimus",
+    "assignPlaceholder": "Vali küsimus…",
+    "noReady": "Valmis küsimusi pole. Vaata esmalt tõlked üle vahekaardil „Küsimused“.",
+    "moveTo": "Liiguta kuupäevale",
+    "move": "Liiguta",
+    "unschedule": "Eemalda ajakavast",
+    "void": "Tühista",
+    "voidConfirm": "Kas tühistada see küsimus? Seda ei näidata enam kunagi mõistatusena ja hääletamine lõpeb.",
+    "delete": "Kustuta",
+    "deleteConfirm": "Kas kustutada see küsimus jäädavalt?",
+    "edit": "Muuda tõlkeid",
+    "stats": "Reaalajas statistika",
+    "status": {
+      "draft": "Mustand",
+      "scheduled": "Ajastatud",
+      "live": "Aktiivne",
+      "closed": "Suletud",
+      "void": "Tühistatud"
+    },
+    "ready": "Valmis",
+    "notReady": "Vajab ülevaatamist",
+    "filterAll": "Kõik",
+    "search": "Otsi küsimusi",
+    "newQuestion": "Uus küsimus",
+    "save": "Salvesta",
+    "saved": "Salvestatud",
+    "cancel": "Loobu",
+    "reviewed": "Üle vaadatud",
+    "translationMissing": "Puudub",
+    "minVotes": "Minimaalne häälte arv mängitavaks muutumiseks",
+    "votes": "Hääli",
+    "yesPct": "Jah %",
+    "perLocale": "Keelte kaupa",
+    "perHour": "Hääli tunnis (UTC)",
+    "guessesStarted": "Alustatud mänge",
+    "guessesFinished": "Lõpetatud mänge",
+    "guessesSolved": "Lahendatud",
+    "avgError": "Keskmine viga",
+    "noData": "Andmeid veel pole.",
+    "moderationEmpty": "Ühtegi ettepanekut ei oota. Tubli!",
+    "approve": "Kinnita mustandina",
+    "reject": "Lükka tagasi",
+    "submittedBy": "saatja: {name}",
+    "anonymous": "anonüümne",
+    "approvedNote": "Kinnitatud — lisa teised tõlked vahekaardil „Küsimused“.",
+    "errors": {
+      "not_ready": "Igal keelel peab enne olema üle vaadatud tõlge.",
+      "date_taken": "Sellel päeval on juba küsimus.",
+      "date_in_past": "Minevikku ei saa ajastada.",
+      "locked": "Aktiivset või suletud küsimust ei saa muuta. Tühista see.",
+      "has_votes": "Sellel küsimusel on juba hääli ja seda ei saa kustutada.",
+      "not_found": "Küsimust ei leitud.",
+      "already_reviewed": "See ettepanek on juba üle vaadatud.",
+      "empty_question": "Kirjuta vähemalt üks tõlge.",
+      "generic": "Midagi läks valesti."
+    },
+    "assignButton": "Määra",
+    "sourceCommunity": "Kogukond",
+    "statusFilter": "Olek"
+  }
+}

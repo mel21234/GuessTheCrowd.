@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "title": "Guess the Crowd – the daily world poll game",
+    "description": "One yes/no question for the whole world every day. Guess what percent of players said yes, in three tries.",
+    "archiveTitle": "Archive – Guess the Crowd",
+    "suggestTitle": "Suggest a question – Guess the Crowd",
+    "privacyTitle": "Privacy – Guess the Crowd",
+    "adminTitle": "Admin – Guess the Crowd"
+  },
+  "app": {
+    "name": "Guess the Crowd",
+    "logo": "GUESS THE CROWD"
+  },
+  "nav": {
+    "help": "How to play",
+    "stats": "Statistics",
+    "settings": "Settings",
+    "language": "Language",
+    "archive": "Archive",
+    "suggest": "Suggest a question",
+    "privacy": "Privacy",
+    "close": "Close",
+    "backToGame": "Back to today’s game",
+    "home": "Home"
+  },
+  "langSuggest": {
+    "text": "This game is also available in {language}.",
+    "switch": "Switch",
+    "dismiss": "No thanks"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong.",
+    "offline": "You seem to be offline. Check your connection.",
+    "retry": "Try again",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "puzzle": {
+    "number": "Puzzle #{number}",
+    "kickerDaily": "Yesterday the world answered:",
+    "kickerArchive": "On {date} the world answered:",
+    "prompt": "What % said yes?",
+    "archiveBadge": "Archive puzzle · doesn’t affect your streak"
+  },
+  "game": {
+    "guess": "Guess",
+    "decrease": "Decrease by 1",
+    "increase": "Increase by 1",
+    "sliderLabel": "Your guess: percent of players who said yes",
+    "attemptsLeft": {
+      "one": "{count} guess left",
+      "other": "{count} guesses left"
+    },
+    "repeated": "You already guessed {value}.",
+    "sending": "Checking…",
+    "tileLabel": "Guess {n}: {value} percent, {verdict}",
+    "tileEmpty": "Guess {n}: not used yet",
+    "verdict": {
+      "correct": "correct!",
+      "close": "close, the answer is {direction}",
+      "miss": "far off, the answer is {direction}"
+    },
+    "direction": {
+      "up": "higher",
+      "down": "lower"
+    },
+    "higher": "Higher",
+    "lower": "Lower",
+    "error": "Your guess didn’t go through. Try again.",
+    "rateLimited": "Too many requests from your network. Wait a moment and try again."
+  },
+  "fallback": {
+    "tooFewVotes": "Yesterday’s question only got {votes} of the {needed} answers needed, so here’s the most recent puzzle with enough players.",
+    "noQuestion": "There was no question yesterday, so here’s the most recent puzzle."
+  },
+  "launch": {
+    "title": "Welcome to day one!",
+    "body": "Every day the whole world answers one yes/no question. The next day, you guess what percent said yes.",
+    "cta": "Answer today’s question to get things started — the first puzzle opens tomorrow."
+  },
+  "result": {
+    "solved": {
+      "one": "Solved in {count} guess!",
+      "other": "Solved in {count} guesses!"
+    },
+    "notSolved": "Not this time!",
+    "saidYes": "{pct} said yes",
+    "players": {
+      "one": "{count} player",
+      "other": "{count} players"
+    },
+    "spotOn": "Spot on — exactly right!",
+    "off": {
+      "one": "You were {count} point off.",
+      "other": "You were {count} points off."
+    },
+    "yourGuesses": "Your guesses",
+    "realAnswer": "Real answer",
+    "within3": "{pct} of players guessed within ±3.",
+    "firstToFinish": "You’re the first player to finish this puzzle.",
+    "histogramTitle": "Everyone’s final guesses",
+    "histogramLabel": "{count} players guessed between {from} and {to}",
+    "breakdownTitle": "Said yes, by language",
+    "breakdownNote": "Shown for languages with at least {min} votes.",
+    "source": "Source of this result",
+    "seededNote": "This first puzzle uses a published survey.",
+    "share": "Share",
+    "copied": "Copied to clipboard!",
+    "copyFailed": "Couldn’t copy. Try again.",
+    "nextPuzzle": "Next puzzle in",
+    "nextAt": "at {time} your time",
+    "archiveLabel": "archive"
+  },
+  "vote": {
+    "title": "Today’s question",
+    "subtitle": "Answer honestly. Tomorrow, everyone guesses how the world answered.",
+    "thanks": "Thanks — your answer is in!",
+    "youAnswered": "You answered “{answer}”.",
+    "comeBack": "Results are revealed tomorrow. Come back to play!",
+    "none": "No question today. Check back tomorrow!",
+    "error": "Your answer didn’t go through. Try again.",
+    "closed": "Voting on this question has closed.",
+    "rateLimited": "Too many answers from your network. Try again later.",
+    "challenge": "Quick check: please confirm you’re human.",
+    "challengeFailed": "The check didn’t work. Try again.",
+    "open": "Answer today’s question"
+  },
+  "help": {
+    "title": "How to play",
+    "step1": "Yesterday, players all over the world answered one yes/no question.",
+    "step2": "Guess what percent said yes. You have 3 tries.",
+    "step3": "Then answer today’s question — it becomes tomorrow’s puzzle.",
+    "legendCorrect": "Within 3 points — solved!",
+    "legendClose": "Within 10 points",
+    "legendMiss": "More than 10 points off",
+    "arrows": "Arrows tell you whether the real answer is higher or lower.",
+    "newDaily": "A new puzzle every day at {time} your time.",
+    "play": "Let’s play"
+  },
+  "stats": {
+    "title": "Statistics",
+    "played": "Played",
+    "winPct": "Win %",
+    "currentStreak": "Current streak",
+    "bestStreak": "Best streak",
+    "avgError": "Average error",
+    "distribution": "Guess distribution",
+    "distributionRow": "{label}: {count}",
+    "empty": "Play your first game to see your stats.",
+    "localOnly": "Stats are stored on this device only."
+  },
+  "settings": {
+    "title": "Settings",
+    "dark": "Dark mode",
+    "darkHint": "Easier on the eyes at night.",
+    "contrast": "High contrast colors",
+    "contrastHint": "Orange and blue tiles plus icons, for color vision deficiency.",
+    "language": "Language"
+  },
+  "archive": {
+    "title": "Archive",
+    "intro": "Past puzzles and how the world really answered. Archive games don’t affect your streak.",
+    "play": "Play",
+    "played": "Played",
+    "reveal": "Show result",
+    "saidYes": "{pct} said yes",
+    "empty": "No past puzzles yet. Come back in a few days!",
+    "loadMore": "Load more",
+    "score": "{score}/3",
+    "notFound": "That puzzle doesn’t exist or isn’t available yet.",
+    "back": "Back to the archive"
+  },
+  "suggest": {
+    "title": "Suggest a question",
+    "intro": "Got a yes/no question the whole world could answer? A human reads every suggestion before it’s used.",
+    "label": "Your question",
+    "placeholder": "Have you ever…?",
+    "hint": "Yes/no and about everyday life. Nothing about health, religion, politics, money or anything private.",
+    "counter": "{count}/{max}",
+    "nickname": "Nickname (optional)",
+    "honeypot": "Leave this field empty",
+    "submit": "Send suggestion",
+    "sending": "Sending…",
+    "success": "Thank you! Your question is in the review queue.",
+    "another": "Suggest another",
+    "errors": {
+      "tooShort": "Please write at least 8 characters.",
+      "tooLong": "Please keep it under {max} characters.",
+      "profanity": "Let’s keep it friendly — please rephrase.",
+      "rateLimited": "You’ve sent a lot of suggestions. Try again in an hour.",
+      "generic": "Something went wrong. Try again."
+    }
+  },
+  "privacy": {
+    "title": "Privacy",
+    "updated": "Last updated: {date}",
+    "intro": "Guess the Crowd works without accounts, ads or tracking. Here is exactly what we store.",
+    "sections": [
+      "On your device: a random player ID, your settings, your language and your game history (for stats). This is stored in your browser’s local storage, not in cookies. Clearing your browser data removes it.",
+      "On our server: your yes/no answer to each question and your guesses, linked only to the random player ID. We do not know who you are.",
+      "For abuse protection we keep a salted, one-way hash of your IP address for at most two days. The salt changes every day, so hashes from different days cannot be linked. We never store your raw IP address.",
+      "If you suggest a question, we store its text, its language and the nickname you entered (if any).",
+      "We use no tracking cookies, no advertising and no third-party analytics that track individuals. If voting is abused we may show a Cloudflare Turnstile check, which processes data under Cloudflare’s privacy policy.",
+      "Results are only ever published as totals and percentages.",
+      "Questions or deletion requests: contact us at {email}. Because we don’t know who you are, include your player ID (shown below) so we can find your data."
+    ],
+    "playerId": "Your player ID on this device: {id}",
+    "noPlayerId": "No player ID has been created on this device yet."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This page doesn’t exist."
+  },
+  "admin": {
+    "title": "Admin",
+    "signInTitle": "Admin sign-in",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "signInError": "Sign-in failed. Check your email and password.",
+    "forbidden": "This account is not an admin.",
+    "notConfigured": "Supabase is not configured. Set the environment variables listed in the README.",
+    "tabs": {
+      "schedule": "Schedule",
+      "questions": "Questions",
+      "moderation": "Moderation"
+    },
+    "warningSchedule": "Only {count} of the next 14 days have a question. First empty day: {date}.",
+    "scheduledOk": "All of the next 14 days are scheduled.",
+    "pendingSubmissions": {
+      "one": "{count} suggestion waiting for review",
+      "other": "{count} suggestions waiting for review"
+    },
+    "today": "Today (UTC)",
+    "prevWeeks": "Earlier",
+    "nextWeeks": "Later",
+    "empty": "Empty",
+    "selectDay": "Select a day to schedule, move or void a question.",
+    "assign": "Assign a ready question",
+    "assignPlaceholder": "Choose a question…",
+    "noReady": "No ready questions. Review translations in the Questions tab first.",
+    "moveTo": "Move to date",
+    "move": "Move",
+    "unschedule": "Unschedule",
+    "void": "Void",
+    "voidConfirm": "Void this question? It will never be shown as a puzzle and voting stops.",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this question permanently?",
+    "edit": "Edit translations",
+    "stats": "Live stats",
+    "status": {
+      "draft": "Draft",
+      "scheduled": "Scheduled",
+      "live": "Live",
+      "closed": "Closed",
+      "void": "Void"
+    },
+    "ready": "Ready",
+    "notReady": "Needs review",
+    "filterAll": "All",
+    "search": "Search questions",
+    "newQuestion": "New question",
+    "save": "Save",
+    "saved": "Saved",
+    "cancel": "Cancel",
+    "reviewed": "Reviewed",
+    "translationMissing": "Missing",
+    "minVotes": "Minimum votes to be playable",
+    "votes": "Votes",
+    "yesPct": "Yes %",
+    "perLocale": "By language",
+    "perHour": "Votes per hour (UTC)",
+    "guessesStarted": "Games started",
+    "guessesFinished": "Games finished",
+    "guessesSolved": "Solved",
+    "avgError": "Average error",
+    "noData": "No data yet.",
+    "moderationEmpty": "No suggestions waiting. Nice!",
+    "approve": "Approve as draft",
+    "reject": "Reject",
+    "submittedBy": "by {name}",
+    "anonymous": "anonymous",
+    "approvedNote": "Approved — add the other translations in the Questions tab.",
+    "errors": {
+      "not_ready": "Every language needs a reviewed translation first.",
+      "date_taken": "That day already has a question.",
+      "date_in_past": "You can’t schedule in the past.",
+      "locked": "Live and closed questions can’t be changed. Void it instead.",
+      "has_votes": "This question already has votes and can’t be deleted.",
+      "not_found": "Question not found.",
+      "already_reviewed": "This suggestion was already reviewed.",
+      "empty_question": "Write at least one translation.",
+      "generic": "Something went wrong."
+    },
+    "assignButton": "Assign",
+    "sourceCommunity": "Community",
+    "statusFilter": "Status"
+  }
+}

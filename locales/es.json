@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "title": "¿Qué dice la gente? – el juego diario de la encuesta mundial",
+    "description": "Una pregunta de sí o no para todo el mundo, cada día. Adivina en tres intentos qué porcentaje de jugadores respondió que sí.",
+    "archiveTitle": "Archivo – ¿Qué dice la gente?",
+    "suggestTitle": "Sugiere una pregunta – ¿Qué dice la gente?",
+    "privacyTitle": "Privacidad – ¿Qué dice la gente?",
+    "adminTitle": "Administración – ¿Qué dice la gente?"
+  },
+  "app": {
+    "name": "¿Qué dice la gente?",
+    "logo": "¿QUÉ DICE LA GENTE?"
+  },
+  "nav": {
+    "help": "Cómo jugar",
+    "stats": "Estadísticas",
+    "settings": "Ajustes",
+    "language": "Idioma",
+    "archive": "Archivo",
+    "suggest": "Sugiere una pregunta",
+    "privacy": "Privacidad",
+    "close": "Cerrar",
+    "backToGame": "Volver al juego de hoy",
+    "home": "Inicio"
+  },
+  "langSuggest": {
+    "text": "Este juego también está disponible en {language}.",
+    "switch": "Cambiar",
+    "dismiss": "No, gracias"
+  },
+  "common": {
+    "loading": "Cargando…",
+    "error": "Algo salió mal.",
+    "offline": "Parece que no tienes conexión. Revisa tu internet.",
+    "retry": "Intentar de nuevo",
+    "yes": "Sí",
+    "no": "No"
+  },
+  "puzzle": {
+    "number": "Reto n.º {number}",
+    "kickerDaily": "Ayer el mundo respondió:",
+    "kickerArchive": "El {date} el mundo respondió:",
+    "prompt": "¿Qué % dijo que sí?",
+    "archiveBadge": "Reto del archivo · no afecta a tu racha"
+  },
+  "game": {
+    "guess": "Adivinar",
+    "decrease": "Restar 1",
+    "increase": "Sumar 1",
+    "sliderLabel": "Tu respuesta: porcentaje de jugadores que dijo que sí",
+    "attemptsLeft": {
+      "one": "Te queda {count} intento",
+      "other": "Te quedan {count} intentos"
+    },
+    "repeated": "Ya probaste con {value}.",
+    "sending": "Comprobando…",
+    "tileLabel": "Intento {n}: {value} por ciento, {verdict}",
+    "tileEmpty": "Intento {n}: sin usar",
+    "verdict": {
+      "correct": "¡correcto!",
+      "close": "cerca, la respuesta es {direction}",
+      "miss": "lejos, la respuesta es {direction}"
+    },
+    "direction": {
+      "up": "más alta",
+      "down": "más baja"
+    },
+    "higher": "Más",
+    "lower": "Menos",
+    "error": "Tu intento no se envió. Inténtalo de nuevo.",
+    "rateLimited": "Demasiadas solicitudes desde tu red. Espera un momento e inténtalo de nuevo."
+  },
+  "fallback": {
+    "tooFewVotes": "La pregunta de ayer solo recibió {votes} de las {needed} respuestas necesarias, así que aquí tienes el reto más reciente con suficientes jugadores.",
+    "noQuestion": "Ayer no hubo pregunta, así que aquí tienes el reto más reciente."
+  },
+  "launch": {
+    "title": "¡Te damos la bienvenida al primer día!",
+    "body": "Cada día, todo el mundo responde una pregunta de sí o no. Al día siguiente, adivinas qué porcentaje dijo que sí.",
+    "cta": "Responde la pregunta de hoy para empezar: el primer reto se abre mañana."
+  },
+  "result": {
+    "solved": {
+      "one": "¡Resuelto en {count} intento!",
+      "other": "¡Resuelto en {count} intentos!"
+    },
+    "notSolved": "¡Esta vez no!",
+    "saidYes": "El {pct} dijo que sí",
+    "players": {
+      "one": "{count} jugador",
+      "other": "{count} jugadores"
+    },
+    "spotOn": "¡Exacto, en el blanco!",
+    "off": {
+      "one": "Te quedaste a {count} punto.",
+      "other": "Te quedaste a {count} puntos."
+    },
+    "yourGuesses": "Tus intentos",
+    "realAnswer": "Respuesta real",
+    "within3": "El {pct} de los jugadores acertó con un margen de ±3.",
+    "firstToFinish": "Nadie había terminado este reto antes que tú.",
+    "histogramTitle": "Respuestas finales de todos",
+    "histogramLabel": "{count} jugadores respondieron entre {from} y {to}",
+    "breakdownTitle": "Dijeron que sí, por idioma",
+    "breakdownNote": "Solo idiomas con al menos {min} votos.",
+    "source": "Fuente de este resultado",
+    "seededNote": "Este primer reto usa una encuesta publicada.",
+    "share": "Compartir",
+    "copied": "¡Copiado al portapapeles!",
+    "copyFailed": "No se pudo copiar. Inténtalo de nuevo.",
+    "nextPuzzle": "Próximo reto en",
+    "nextAt": "a las {time} en tu hora",
+    "archiveLabel": "archivo"
+  },
+  "vote": {
+    "title": "La pregunta de hoy",
+    "subtitle": "Responde con sinceridad. Mañana todos adivinarán cómo respondió el mundo.",
+    "thanks": "¡Gracias, tu respuesta quedó registrada!",
+    "youAnswered": "Respondiste «{answer}».",
+    "comeBack": "El resultado se revela mañana. ¡Vuelve a jugar!",
+    "none": "Hoy no hay pregunta. ¡Vuelve mañana!",
+    "error": "Tu respuesta no se envió. Inténtalo de nuevo.",
+    "closed": "La votación de esta pregunta ya cerró.",
+    "rateLimited": "Demasiadas respuestas desde tu red. Inténtalo más tarde.",
+    "challenge": "Una comprobación rápida: confirma que eres una persona.",
+    "challengeFailed": "La comprobación no funcionó. Inténtalo de nuevo.",
+    "open": "Responde la pregunta de hoy"
+  },
+  "help": {
+    "title": "Cómo jugar",
+    "step1": "Ayer, jugadores de todo el mundo respondieron una pregunta de sí o no.",
+    "step2": "Adivina qué porcentaje dijo que sí. Tienes 3 intentos.",
+    "step3": "Después responde la pregunta de hoy: será el reto de mañana.",
+    "legendCorrect": "A 3 puntos o menos: ¡resuelto!",
+    "legendClose": "A 10 puntos o menos",
+    "legendMiss": "A más de 10 puntos",
+    "arrows": "Las flechas te indican si la respuesta real es más alta o más baja.",
+    "newDaily": "Un reto nuevo cada día a las {time} en tu hora.",
+    "play": "¡A jugar!"
+  },
+  "stats": {
+    "title": "Estadísticas",
+    "played": "Jugados",
+    "winPct": "% de victorias",
+    "currentStreak": "Racha actual",
+    "bestStreak": "Mejor racha",
+    "avgError": "Error medio",
+    "distribution": "Distribución de intentos",
+    "distributionRow": "{label}: {count}",
+    "empty": "Juega tu primera partida para ver tus estadísticas.",
+    "localOnly": "Las estadísticas se guardan solo en este dispositivo."
+  },
+  "settings": {
+    "title": "Ajustes",
+    "dark": "Modo oscuro",
+    "darkHint": "Más cómodo para la vista de noche.",
+    "contrast": "Colores de alto contraste",
+    "contrastHint": "Casillas naranjas y azules con íconos, para dificultades en la visión del color.",
+    "language": "Idioma"
+  },
+  "archive": {
+    "title": "Archivo",
+    "intro": "Retos anteriores y cómo respondió realmente el mundo. Las partidas del archivo no afectan a tu racha.",
+    "play": "Jugar",
+    "played": "Jugado",
+    "reveal": "Ver resultado",
+    "saidYes": "El {pct} dijo que sí",
+    "empty": "Todavía no hay retos anteriores. ¡Vuelve en unos días!",
+    "loadMore": "Cargar más",
+    "score": "{score}/3",
+    "notFound": "Ese reto no existe o todavía no está disponible.",
+    "back": "Volver al archivo"
+  },
+  "suggest": {
+    "title": "Sugiere una pregunta",
+    "intro": "¿Tienes una pregunta de sí o no que todo el mundo pueda responder? Una persona revisa cada sugerencia antes de usarla.",
+    "label": "Tu pregunta",
+    "placeholder": "¿Alguna vez has…?",
+    "hint": "De sí o no y sobre la vida cotidiana. Nada sobre salud, religión, política, dinero ni temas privados.",
+    "counter": "{count}/{max}",
+    "nickname": "Apodo (opcional)",
+    "honeypot": "Deja este campo vacío",
+    "submit": "Enviar sugerencia",
+    "sending": "Enviando…",
+    "success": "¡Gracias! Tu pregunta está en la cola de revisión.",
+    "another": "Sugerir otra",
+    "errors": {
+      "tooShort": "Escribe al menos 8 caracteres.",
+      "tooLong": "Usa como máximo {max} caracteres.",
+      "profanity": "Mantengamos un tono amable: reformúlala, por favor.",
+      "rateLimited": "Enviaste muchas sugerencias. Inténtalo de nuevo en una hora.",
+      "generic": "Algo salió mal. Inténtalo de nuevo."
+    }
+  },
+  "privacy": {
+    "title": "Privacidad",
+    "updated": "Última actualización: {date}",
+    "intro": "¿Qué dice la gente? funciona sin cuentas, sin anuncios y sin rastreo. Esto es exactamente lo que guardamos.",
+    "sections": [
+      "En tu dispositivo: un identificador de jugador aleatorio, tus ajustes, tu idioma y tu historial de partidas (para las estadísticas). Se guardan en el almacenamiento local del navegador, no en cookies. Si borras los datos del navegador, desaparecen.",
+      "En nuestro servidor: tu respuesta de sí o no a cada pregunta y tus intentos, vinculados solo al identificador aleatorio. No sabemos quién eres.",
+      "Para evitar abusos guardamos, durante dos días como máximo, un hash irreversible y con sal de tu dirección IP. La sal cambia cada día, así que los hashes de días distintos no se pueden relacionar. Nunca guardamos tu dirección IP real.",
+      "Si sugieres una pregunta, guardamos su texto, su idioma y el apodo que escribiste (si lo hay).",
+      "No usamos cookies de rastreo, publicidad ni analítica de terceros que siga a las personas. Si hay abuso en las votaciones, podemos mostrar una verificación de Cloudflare Turnstile, que trata los datos según la política de privacidad de Cloudflare.",
+      "Los resultados solo se publican como totales y porcentajes.",
+      "Para preguntas o solicitudes de borrado, escríbenos a {email}. Como no sabemos quién eres, incluye tu identificador de jugador (lo ves abajo) para que podamos encontrar tus datos."
+    ],
+    "playerId": "Tu identificador de jugador en este dispositivo: {id}",
+    "noPlayerId": "Todavía no se ha creado un identificador de jugador en este dispositivo."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "body": "Esta página no existe."
+  },
+  "admin": {
+    "title": "Administración",
+    "signInTitle": "Acceso de administración",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "signIn": "Entrar",
+    "signOut": "Salir",
+    "signInError": "No se pudo iniciar sesión. Revisa el correo y la contraseña.",
+    "forbidden": "Esta cuenta no es de administración.",
+    "notConfigured": "Supabase no está configurado. Define las variables de entorno indicadas en el README.",
+    "tabs": {
+      "schedule": "Calendario",
+      "questions": "Preguntas",
+      "moderation": "Moderación"
+    },
+    "warningSchedule": "Solo {count} de los próximos 14 días tienen pregunta. Primer día vacío: {date}.",
+    "scheduledOk": "Los próximos 14 días tienen pregunta.",
+    "pendingSubmissions": {
+      "one": "{count} sugerencia pendiente de revisión",
+      "other": "{count} sugerencias pendientes de revisión"
+    },
+    "today": "Hoy (UTC)",
+    "prevWeeks": "Antes",
+    "nextWeeks": "Después",
+    "empty": "Vacío",
+    "selectDay": "Elige un día para programar, mover o anular una pregunta.",
+    "assign": "Asignar una pregunta lista",
+    "assignPlaceholder": "Elige una pregunta…",
+    "noReady": "No hay preguntas listas. Revisa primero las traducciones en la pestaña Preguntas.",
+    "moveTo": "Mover a la fecha",
+    "move": "Mover",
+    "unschedule": "Quitar del calendario",
+    "void": "Anular",
+    "voidConfirm": "¿Anular esta pregunta? Nunca se mostrará como reto y la votación se detiene.",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar esta pregunta para siempre?",
+    "edit": "Editar traducciones",
+    "stats": "Estadísticas en vivo",
+    "status": {
+      "draft": "Borrador",
+      "scheduled": "Programada",
+      "live": "En curso",
+      "closed": "Cerrada",
+      "void": "Anulada"
+    },
+    "ready": "Lista",
+    "notReady": "Falta revisar",
+    "filterAll": "Todas",
+    "search": "Buscar preguntas",
+    "newQuestion": "Nueva pregunta",
+    "save": "Guardar",
+    "saved": "Guardado",
+    "cancel": "Cancelar",
+    "reviewed": "Revisada",
+    "translationMissing": "Falta",
+    "minVotes": "Votos mínimos para ser jugable",
+    "votes": "Votos",
+    "yesPct": "% de sí",
+    "perLocale": "Por idioma",
+    "perHour": "Votos por hora (UTC)",
+    "guessesStarted": "Partidas empezadas",
+    "guessesFinished": "Partidas terminadas",
+    "guessesSolved": "Resueltas",
+    "avgError": "Error medio",
+    "noData": "Todavía no hay datos.",
+    "moderationEmpty": "No hay sugerencias pendientes. ¡Bien!",
+    "approve": "Aprobar como borrador",
+    "reject": "Rechazar",
+    "submittedBy": "de {name}",
+    "anonymous": "anónimo",
+    "approvedNote": "Aprobada: añade las demás traducciones en la pestaña Preguntas.",
+    "errors": {
+      "not_ready": "Cada idioma necesita antes una traducción revisada.",
+      "date_taken": "Ese día ya tiene una pregunta.",
+      "date_in_past": "No se puede programar en el pasado.",
+      "locked": "Las preguntas en curso o cerradas no se pueden cambiar. Anúlala.",
+      "has_votes": "Esta pregunta ya tiene votos y no se puede eliminar.",
+      "not_found": "No se encontró la pregunta.",
+      "already_reviewed": "Esta sugerencia ya fue revisada.",
+      "empty_question": "Escribe al menos una traducción.",
+      "generic": "Algo salió mal."
+    },
+    "assignButton": "Asignar",
+    "sourceCommunity": "Comunidad",
+    "statusFilter": "Estado"
+  }
+}

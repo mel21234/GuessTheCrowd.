@@ -1,0 +1,38 @@
+{
+  "name": "guess-the-crowd",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A daily world poll guessing game: guess what percent of players said yes.",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test \"tests/unit/**/*.test.ts\"",
+    "test:db": "tsx scripts/test-db.ts",
+    "test:integration": "node --import tsx --test \"tests/integration/**/*.test.ts\"",
+    "test:all": "npm run test && npm run test:db && npm run test:integration",
+    "seed:build": "tsx scripts/build-seed.ts",
+    "assets": "node scripts/build-assets.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.75.0",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "sharp": "^0.34.0",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
