@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant hc (&:where([data-contrast="high"], [data-contrast="high"] *));
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Pastel tiles always carry dark text (#1A1A1B), never white.
+   --------------------------------------------------------------------------- */
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1b;
+  --muted: #6b6f72;
+  --border: #e3e5e8;
+  --surface: #f5f6f7;
+  --track: #e3e5e8;
+  --tile-ink: #1a1a1b;
+  --correct: #a8d5a2;
+  --correct-ink: #4e8f48;
+  --close: #f2e2a0;
+  --close-ink: #b59a2c;
+  --miss: #dadde0;
+  --miss-ink: #7c8084;
+  --btn: #1a1a1b;
+  --btn-fg: #ffffff;
+  --focus: #2563eb;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #141415;
+  --fg: #f1f1f2;
+  --muted: #a3a7ab;
+  --border: #36373a;
+  --surface: #1f2022;
+  --track: #36373a;
+  --correct: #95c98e;
+  --correct-ink: #8cc785;
+  --close: #e6d283;
+  --close-ink: #d9bf55;
+  --miss: #a5a9ae;
+  --miss-ink: #a5a9ae;
+  --btn: #f1f1f2;
+  --btn-fg: #141415;
+  --focus: #7aa7ff;
+  color-scheme: dark;
+}
+
+/* High contrast / colour-blind palette: orange = correct, blue = close. */
+[data-contrast="high"] {
+  --correct: #f5793a;
+  --correct-ink: #b54708;
+  --close: #85c0f9;
+  --close-ink: #1f6fb2;
+  --miss: #c9cdd1;
+  --miss-ink: #5b5f63;
+}
+[data-theme="dark"][data-contrast="high"] {
+  --correct-ink: #f79a63;
+  --close-ink: #85c0f9;
+  --miss: #a5a9ae;
+  --miss-ink: #a5a9ae;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--border);
+  --color-surface: var(--surface);
+  --color-track: var(--track);
+  --color-tile-ink: var(--tile-ink);
+  --color-correct: var(--correct);
+  --color-correct-ink: var(--correct-ink);
+  --color-close: var(--close);
+  --color-close-ink: var(--close-ink);
+  --color-miss: var(--miss);
+  --color-miss-ink: var(--miss-ink);
+  --color-btn: var(--btn);
+  --color-btn-fg: var(--btn-fg);
+  --font-sans: var(--font-figtree), "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.balance {
+  text-wrap: balance;
+}
+
+/* ---------------------------------------------------------------------------
+   The guess slider: big, smooth, thumb-friendly.
+   --------------------------------------------------------------------------- */
+.guess-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  background: transparent;
+  cursor: pointer;
+  touch-action: pan-y;
+  --pct: 50%;
+}
+.guess-range::-webkit-slider-runnable-track {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--fg) 0 var(--pct), var(--track) var(--pct) 100%);
+}
+.guess-range::-moz-range-track {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--track);
+}
+.guess-range::-moz-range-progress {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--fg);
+}
+.guess-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 34px;
+  height: 34px;
+  margin-top: -12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--fg);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.18);
+  transition: transform 120ms ease;
+}
+.guess-range::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--fg);
+}
+.guess-range:active::-webkit-slider-thumb {
+  transform: scale(1.12);
+}
+.guess-range:focus-visible {
+  outline: none;
+}
+.guess-range:focus-visible::-webkit-slider-thumb {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.guess-range:focus-visible::-moz-range-thumb {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   Motion. One orchestrated reveal; everything else answers an action.
+   --------------------------------------------------------------------------- */
+@keyframes tile-flip {
+  0% { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0); }
+}
+@keyframes shake {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(3px); }
+  30%, 50%, 70% { transform: translateX(-6px); }
+  40%, 60% { transform: translateX(6px); }
+}
+@keyframes pop-in {
+  0% { opacity: 0; transform: translateY(-6px) scale(0.6); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes toast-in {
+  0% { opacity: 0; transform: translate(-50%, -8px); }
+  100% { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.anim-flip {
+  animation: tile-flip 420ms cubic-bezier(0.3, 1.3, 0.6, 1) both;
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+.anim-shake {
+  animation: shake 420ms ease both;
+}
+.anim-pop {
+  animation: pop-in 320ms cubic-bezier(0.3, 1.4, 0.6, 1) both;
+}
+.anim-fade-up {
+  animation: fade-up 360ms ease-out both;
+}
+
+.reveal-fill {
+  transition: width 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Dialogs
+   --------------------------------------------------------------------------- */
+dialog.modal {
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  max-width: min(440px, calc(100vw - 24px));
+  width: 100%;
+  max-height: calc(100dvh - 24px);
+  color: var(--fg);
+}
+dialog.modal::backdrop {
+  background: rgb(20 20 21 / 0.45);
+}
+[data-theme="dark"] dialog.modal::backdrop {
+  background: rgb(0 0 0 / 0.65);
+}
+dialog.modal[open] {
+  animation: fade-up 220ms ease-out both;
+}
+
+/* Compact spacing on short phones so the whole game fits without scrolling. */
+@media (max-height: 700px) {
+  .short-tight {
+    --gap-scale: 0.7;
+  }
+}
